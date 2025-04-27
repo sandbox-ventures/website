@@ -1,766 +1,396 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" class="bg-white scroll-smooth">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Sandbox.Ventures - The SaaS Product Factory</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta
-            property="og:title"
-            content="Sandbox.Ventures - The SaaS Product Factory"
-        />
-        <meta
-            property="og:description"
-            content="No unicorns, but 100 horses. We build real solutions that solve real problems with practical, efficient, and sustainable SaaS products."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.sandbox.ventures/" />
-        <meta
-            property="og:image"
-            content="https://www.sandbox.ventures/favicon.svg"
-        />
-        <meta
-            property="og:logo"
-            content="https://www.sandbox.ventures/favicon.svg"
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-            name="twitter:title"
-            content="Sandbox.Ventures - The SaaS Product Factory"
-        />
-        <meta
-            name="twitter:description"
-            content="No unicorns, but 100 horses. We build real solutions that solve real problems with practical, efficient, and sustainable SaaS products."
-        />
-        <meta
-            name="twitter:image"
-            content="https://www.sandbox.ventures/favicon.svg"
-        />
-    </head>
-    <body class="flex min-h-screen flex-col bg-white">
-        <!-- Header -->
-        <header class="fixed z-50 w-full bg-white shadow-sm py-3">
-            <div
-                class="container mx-auto px-6 flex justify-between items-center"
-            >
-                <h1
-                    class="text-xl font-bold text-gray-800 inline-flex items-center"
-                >
-                    <a class="inline-flex" href="/"
-                        >Sandbox.Ventures
-                        <img class="px-2 h-[1em]" src="/favicon.svg"
-                    /></a>
-                </h1>
-                <button
-                    class="md:hidden text-gray-800"
-                    onclick="document.getElementById('menu').classList.toggle('hidden')"
-                >
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
-                <nav
-                    id="menu"
-                    class="hidden md:block absolute md:relative top-16 md:top-0 left-0 w-full md:w-auto z-50"
-                >
-                    <ul
-                        class="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-6 p-4 md:p-0 bg-white md:bg-transparent shadow-md md:shadow-none"
-                    >
-                        <li>
-                            <a
-                                href="#philosophy"
-                                class="text-gray-700 hover:text-gray-900 transition block"
-                                >Philosophy</a
-                            >
-                        </li>
-                        <li>
-                            <a
-                                href="#products"
-                                class="text-gray-700 hover:text-gray-900 transition block"
-                                >Products</a
-                            >
-                        </li>
-                        <li>
-                            <a
-                                href="#jobs"
-                                class="text-gray-700 hover:text-gray-900 transition block"
-                                >Jobs</a
-                            >
-                        </li>
-                        <li>
-                            <a
-                                href="#contact"
-                                class="text-gray-700 hover:text-gray-900 transition block"
-                                >Contact</a
-                            >
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandbox.Ventures - The SaaS Product Factory</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta property="og:title" content="Sandbox.Ventures - The SaaS Product Factory">
+    <meta property="og:description" content="No unicorns, but 100 horses. We build real solutions that solve real problems with practical, efficient, and sustainable SaaS products.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.sandbox.ventures/">
+    <meta property="og:image" content="https://www.sandbox.ventures/favicon.svg">
+    <meta property="og:logo" content="https://www.sandbox.ventures/favicon.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sandbox.Ventures - The SaaS Product Factory">
+    <meta name="twitter:description" content="No unicorns, but 100 horses. We build real solutions that solve real problems with practical, efficient, and sustainable SaaS products.">
+    <meta name="twitter:image" content="https://www.sandbox.ventures/favicon.svg">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-104SFGLQ6B"></script>
+    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-104SFGLQ6B');</script>
+</head>
+<body class="flex min-h-screen flex-col bg-white">
 
-        <!-- Hero Section -->
-        <section class="pt-28 pb-16 bg-gray-50 text-center">
-            <div class="container mx-auto px-6">
-                <h2
-                    class="text-4xl font-bold text-gray-800"
-                    id="typingAnimation"
-                >
-                    The SaaS Product Factory
-                </h2>
-                <p class="mt-4 text-lg text-gray-600">
-                    No unicorns, but 100 horses. We build real solutions that
-                    solve real problems.
-                </p>
-                <a
-                    href="#philosophy"
-                    class="mt-6 inline-block px-5 py-2 bg-blue-500 text-white font-medium rounded hover:bg-blue-600 transition"
-                    >Our Approach</a
-                >
-            </div>
-        </section>
+    <!-- Header -->
+    <header class="fixed z-50 w-full bg-white shadow-sm py-3">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-gray-800 inline-flex items-center"><a class="inline-flex" href="/">Sandbox.Ventures <img class="px-2 h-[1em]" src="/favicon.svg"></a></h1>
+            <button class="md:hidden text-gray-800" onclick="document.getElementById('menu').classList.toggle('hidden')">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+            <nav id="menu" class="hidden md:block absolute md:relative top-16 md:top-0 left-0 w-full md:w-auto z-50">
+                <ul class="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-6 p-4 md:p-0 bg-white md:bg-transparent shadow-md md:shadow-none">
+                    <li><a href="#philosophy" class="text-gray-700 hover:text-gray-900 transition block">Philosophy</a></li>
+                    <li><a href="#products" class="text-gray-700 hover:text-gray-900 transition block">Products</a></li>
+                    <li><a href="#jobs" class="text-gray-700 hover:text-gray-900 transition block">Jobs</a></li>
+                    <li><a href="#contact" class="text-gray-700 hover:text-gray-900 transition block">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-        <!-- Philosophy Section -->
-        <section id="philosophy" class="py-16 bg-white">
-            <div class="container mx-auto px-4">
-                <h2 class="text-2xl font-bold text-gray-800 text-center mb-10">
-                    Our Philosophy
-                </h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="bg-gray-50 p-5 rounded border border-gray-100">
-                        <div
-                            class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center mb-3"
-                        >
-                            <i class="fas fa-puzzle-piece text-blue-500"></i>
-                        </div>
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">
-                            Practicality
-                        </h3>
-                        <p class="text-gray-600">
-                            We focus on solutions that address genuine market
-                            needs, not chasing trends.
-                        </p>
+    <!-- Hero Section -->
+    <section class="pt-28 pb-16 bg-gray-50 text-center">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-gray-800" id="typingAnimation">The SaaS Product Factory</h2>
+            <p class="mt-4 text-lg text-gray-600">No unicorns, but 100 horses. We build real solutions that solve real problems.</p>
+            <a href="#philosophy" class="mt-6 inline-block px-5 py-2 bg-blue-500 text-white font-medium rounded hover:bg-blue-600 transition">Our Approach</a>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section id="philosophy" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold text-gray-800 text-center mb-10">Our Philosophy</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-gray-50 p-5 rounded border border-gray-100">
+                    <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center mb-3">
+                        <i class="fas fa-puzzle-piece text-blue-500"></i>
                     </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Practicality</h3>
+                    <p class="text-gray-600">We focus on solutions that address genuine market needs, not chasing trends.</p>
+                </div>
 
-                    <div class="bg-gray-50 p-5 rounded border border-gray-100">
-                        <div
-                            class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mb-3"
-                        >
-                            <i class="fas fa-bolt text-green-500"></i>
-                        </div>
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">
-                            Efficiency
-                        </h3>
-                        <p class="text-gray-600">
-                            Making the most of limited resources by maximizing
-                            development productivity.
-                        </p>
+                <div class="bg-gray-50 p-5 rounded border border-gray-100">
+                    <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mb-3">
+                        <i class="fas fa-bolt text-green-500"></i>
                     </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Efficiency</h3>
+                    <p class="text-gray-600">Making the most of limited resources by maximizing development productivity.</p>
+                </div>
 
-                    <div class="bg-gray-50 p-5 rounded border border-gray-100">
-                        <div
-                            class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center mb-3"
-                        >
-                            <i class="fas fa-rocket text-purple-500"></i>
-                        </div>
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">
-                            Speed
-                        </h3>
-                        <p class="text-gray-600">
-                            Getting to market quickly to validate ideas and
-                            deliver value to customers.
-                        </p>
+                <div class="bg-gray-50 p-5 rounded border border-gray-100">
+                    <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center mb-3">
+                        <i class="fas fa-rocket text-purple-500"></i>
                     </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Speed</h3>
+                    <p class="text-gray-600">Getting to market quickly to validate ideas and deliver value to customers.</p>
+                </div>
 
-                    <div class="bg-gray-50 p-5 rounded border border-gray-100">
-                        <div
-                            class="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center mb-3"
-                        >
-                            <i class="fas fa-seedling text-red-500"></i>
-                        </div>
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">
-                            Sustainability
-                        </h3>
-                        <p class="text-gray-600">
-                            Building businesses with sound economics from day
-                            one, focusing on profitability.
-                        </p>
+                <div class="bg-gray-50 p-5 rounded border border-gray-100">
+                    <div class="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center mb-3">
+                        <i class="fas fa-seedling text-red-500"></i>
                     </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Sustainability</h3>
+                    <p class="text-gray-600">Building businesses with sound economics from day one, focusing on profitability.</p>
+                </div>
 
-                    <div class="bg-gray-50 p-5 rounded border border-gray-100">
-                        <div
-                            class="w-8 h-8 rounded-full bg-yellow-100 flex items-center justify-center mb-3"
-                        >
-                            <i class="fas fa-horse text-yellow-500"></i>
-                        </div>
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">
-                            100 Horses, Not Unicorns
-                        </h3>
-                        <p class="text-gray-600">
-                            Building a portfolio of solid, practical SaaS
-                            products that solve real problems.
-                        </p>
+                <div class="bg-gray-50 p-5 rounded border border-gray-100">
+                    <div class="w-8 h-8 rounded-full bg-yellow-100 flex items-center justify-center mb-3">
+                        <i class="fas fa-horse text-yellow-500"></i>
                     </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">100 Horses, Not Unicorns</h3>
+                    <p class="text-gray-600">Building a portfolio of solid, practical SaaS products that solve real problems.</p>
+                </div>
 
-                    <div class="bg-gray-50 p-5 rounded border border-gray-100">
-                        <div
-                            class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center mb-3"
-                        >
-                            <i class="fas fa-users text-indigo-500"></i>
-                        </div>
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">
-                            Small, Focused Teams
-                        </h3>
-                        <p class="text-gray-600">
-                            Small teams of highly skilled individuals who can
-                            move quickly and decisively.
-                        </p>
+                <div class="bg-gray-50 p-5 rounded border border-gray-100">
+                    <div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center mb-3">
+                        <i class="fas fa-users text-indigo-500"></i>
                     </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Small, Focused Teams</h3>
+                    <p class="text-gray-600">Small teams of highly skilled individuals who can move quickly and decisively.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Products Section -->
-        <section id="products" class="py-16 bg-white">
-            <div class="container mx-auto px-4">
-                <h2 class="text-2xl font-bold text-gray-800 text-center mb-10">
-                    Our Products
-                </h2>
-                <p class="text-gray-600 mb-10 text-center">
-                    A growing stable of practical SaaS solutions solving real
-                    business problems
-                </p>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="bg-gray-50 p-5 rounded border border-gray-100">
-                        <div
-                            class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center mb-3"
-                        >
-                            <img
-                                src="https://www.nemboks.dk/icon.svg"
-                                alt="Nemboks Logo"
-                                class="h-5"
-                            />
-                        </div>
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">
-                            Nemboks.dk
-                        </h3>
-                        <p class="text-gray-600">
-                            Enables Danish companies to receive and manage their
-                            official Digital Post communications seamlessly
-                            forwarded to their regular email inbox without
-                            technical complexity or administrative burden.
-                        </p>
-                        <a
-                            href="https://www.nemboks.dk"
-                            class="text-blue-500 hover:underline mt-3 inline-block"
-                            >Learn more →</a
-                        >
+    <!-- Products Section -->
+    <section id="products" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold text-gray-800 text-center mb-10">Our Products</h2>
+            <p class="text-gray-600 mb-10 text-center">
+                A growing stable of practical SaaS solutions solving real business problems
+            </p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-gray-50 p-5 rounded border border-gray-100">
+                    <div class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center mb-3">
+                        <img src="https://www.nemboks.dk/icon.svg" alt="Nemboks Logo" class="h-5">
                     </div>
-
-                    <div class="bg-gray-50 p-5 rounded border border-gray-100">
-                        <div
-                            class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center mb-3"
-                        >
-                            <img
-                                src="https://www.finscale.io/favicon.svg"
-                                alt="Finscale Logo"
-                                class="h-5"
-                            />
-                        </div>
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">
-                            Finscale
-                        </h3>
-                        <p class="text-gray-600">
-                            AI-driven merchant management platform for fintechs.
-                            Streamline customer onboarding, enhance compliance
-                            workflows, and optimize risk management to help
-                            fintech companies scale their operations
-                            efficiently.
-                        </p>
-                        <a
-                            href="https://www.finscale.io/"
-                            class="text-blue-500 hover:underline mt-3 inline-block"
-                            >Learn more →</a
-                        >
-                    </div>
-
-                    <div class="bg-gray-50 p-5 rounded border border-gray-100">
-                        <div
-                            class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center mb-3"
-                        >
-                            <i class="fas fa-rocket text-purple-500"></i>
-                        </div>
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">
-                            More Coming Soon
-                        </h3>
-                        <p class="text-gray-600">
-                            Additional products are in active development and
-                            will be launching soon. Our team is currently
-                            validating new ideas and building solutions to
-                            address emerging market needs in various business
-                            sectors.
-                        </p>
-                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Nemboks.dk</h3>
+                    <p class="text-gray-600">
+                        Enables Danish companies to receive and manage their official Digital Post communications seamlessly forwarded to their regular email inbox without technical complexity or administrative burden.
+                    </p>
+                    <a href="https://www.nemboks.dk" class="text-blue-500 hover:underline mt-3 inline-block">Learn more →</a>
                 </div>
-            </div>
-        </section>
 
-        <!-- Jobs Section -->
-        <section id="jobs" class="py-16 text-center">
-            <div class="container mx-auto px-6">
-                <h2 class="text-2xl font-bold text-gray-800 mb-8">
-                    Join Our Team
-                </h2>
-                <p class="text-gray-600 mb-10">
-                    We're looking for talented individuals to help us build the
-                    next generation of practical SaaS products
-                </p>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div
-                        class="bg-gray-50 p-5 rounded border border-gray-100 text-left flex flex-col"
-                    >
-                        <div
-                            class="w-10 h-10 rounded-full bg-blue-200 flex items-center justify-center mb-4"
-                        >
-                            <i class="fas fa-laptop-code text-blue-600"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">
-                            Student Developer
-                        </h3>
-                        <p class="text-gray-700 mb-2">
-                            Perfect for students looking to gain real-world
-                            experience while working on practical SaaS products.
-                        </p>
-                        <ul class="text-gray-700 mb-4 list-disc pl-5">
-                            <li>Part-time flexibility around your studies</li>
-                            <li>Hands-on experience with modern tech stacks</li>
-                            <li>Mentorship from experienced developers</li>
-                            <li>Opportunity to contribute to real products</li>
-                            <li>
-                                Valuable industry experience for your resume
-                            </li>
-                        </ul>
-                        <div class="mt-auto flex justify-center">
-                            <button
-                                onclick="openModal('Student Developer')"
-                                class="inline-block px-4 py-2 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition transform hover:-translate-y-1 shadow-sm hover:shadow"
-                            >
-                                Apply Now
-                            </button>
-                        </div>
+                <div class="bg-gray-50 p-5 rounded border border-gray-100">
+                    <div class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center mb-3">
+                        <img src="https://www.finscale.io/favicon.svg" alt="Finscale Logo" class="h-5">
                     </div>
-
-                    <div
-                        class="bg-gray-50 p-5 rounded border border-gray-100 text-left flex flex-col"
-                    >
-                        <div
-                            class="w-10 h-10 rounded-full bg-green-200 flex items-center justify-center mb-4"
-                        >
-                            <i class="fas fa-code text-green-600"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">Junior Developer</h3>
-                        <p class="text-gray-700 mb-2">
-                            For developers early in their career looking to grow
-                            their skills in a fast-paced environment.
-                        </p>
-                        <ul class="text-gray-700 mb-4 list-disc pl-5">
-                            <li>Work across full-stack development</li>
-                            <li>Accelerated learning and career progression</li>
-                            <li>
-                                Ownership of features from concept to deployment
-                            </li>
-                            <li>Collaborative team environment</li>
-                            <li>
-                                Exposure to multiple products and technologies
-                            </li>
-                        </ul>
-                        <div class="mt-auto flex justify-center">
-                            <button
-                                onclick="openModal('Junior Developer')"
-                                class="inline-block px-4 py-2 bg-green-600 text-white font-medium rounded-md hover:bg-green-700 transition transform hover:-translate-y-1 shadow-sm hover:shadow"
-                            >
-                                Apply Now
-                            </button>
-                        </div>
-                    </div>
-
-                    <div
-                        class="bg-gray-50 p-5 rounded border border-gray-100 text-left flex flex-col"
-                    >
-                        <div
-                            class="w-10 h-10 rounded-full bg-purple-200 flex items-center justify-center mb-4"
-                        >
-                            <i class="fas fa-chart-line text-purple-600"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">Growth Hacker</h3>
-                        <p class="text-gray-700 mb-2">
-                            Creative marketer with technical skills to help our
-                            products reach their target audiences.
-                        </p>
-                        <ul class="text-gray-700 mb-4 list-disc pl-5">
-                            <li>
-                                Design and execute innovative marketing
-                                campaigns
-                            </li>
-                            <li>
-                                Analyze user acquisition data and optimize
-                                funnels
-                            </li>
-                            <li>
-                                Collaborate with product teams on go-to-market
-                                strategies
-                            </li>
-                            <li>Experiment with new channels and approaches</li>
-                            <li>Build automation to scale growth efforts</li>
-                        </ul>
-                        <div class="mt-auto flex justify-center">
-                            <button
-                                onclick="openModal('Growth Hacker')"
-                                class="inline-block px-4 py-2 bg-purple-600 text-white font-medium rounded-md hover:bg-purple-700 transition transform hover:-translate-y-1 shadow-sm hover:shadow"
-                            >
-                                Apply Now
-                            </button>
-                        </div>
-                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Finscale</h3>
+                    <p class="text-gray-600">
+                        AI-driven merchant management platform for fintechs. Streamline customer onboarding, enhance compliance workflows, and optimize risk management to help fintech companies scale their operations efficiently.
+                    </p>
+                    <a href="https://www.finscale.io/" class="text-blue-500 hover:underline mt-3 inline-block">Learn more →</a>
                 </div>
-            </div>
 
-            <!-- Application Modal -->
-            <div
-                id="applicationModal"
-                class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden"
-            >
-                <div
-                    class="bg-white rounded-lg w-full max-w-md mx-4 p-6 max-h-90vh overflow-y-auto"
-                >
-                    <div class="flex justify-between items-center mb-4">
-                        <h3 class="text-xl font-bold text-gray-800">
-                            Apply for <span id="jobTitle">Position</span>
-                        </h3>
-                        <button
-                            onclick="closeModal()"
-                            class="text-gray-500 hover:text-gray-700"
-                        >
-                            <i class="fas fa-times"></i>
-                        </button>
+                <div class="bg-gray-50 p-5 rounded border border-gray-100">
+                    <div class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center mb-3">
+                        <i class="fas fa-rocket text-purple-500"></i>
                     </div>
-                    <form id="applicationForm" class="space-y-4 text-left">
-                        <input
-                            type="hidden"
-                            id="position"
-                            name="position"
-                            value=""
-                        />
-
-                        <div>
-                            <label
-                                for="fullName"
-                                class="block text-sm font-medium text-gray-700 mb-1"
-                                >Full Name *</label
-                            >
-                            <input
-                                type="text"
-                                id="fullName"
-                                name="fullName"
-                                class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500"
-                                required
-                            />
-                        </div>
-
-                        <div>
-                            <label
-                                for="email"
-                                class="block text-sm font-medium text-gray-700 mb-1"
-                                >Email *</label
-                            >
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500"
-                                required
-                            />
-                        </div>
-
-                        <div>
-                            <label
-                                for="phone"
-                                class="block text-sm font-medium text-gray-700 mb-1"
-                                >Phone *</label
-                            >
-                            <input
-                                type="tel"
-                                id="phone"
-                                name="phone"
-                                class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500"
-                                required
-                            />
-                        </div>
-
-                        <div>
-                            <label
-                                for="linkedin"
-                                class="block text-sm font-medium text-gray-700 mb-1"
-                                >LinkedIn URL *</label
-                            >
-                            <input
-                                type="url"
-                                id="linkedin"
-                                name="linkedin"
-                                class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500"
-                                required
-                            />
-                        </div>
-
-                        <div>
-                            <label
-                                for="resumeUrl"
-                                class="block text-sm font-medium text-gray-700 mb-1"
-                                >Resume/CV URL *</label
-                            >
-                            <input
-                                type="url"
-                                id="resumeUrl"
-                                name="resumeUrl"
-                                class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500"
-                                required
-                            />
-                            <p class="text-xs text-gray-500 mt-1">
-                                Link to your resume (Google Drive, Dropbox,
-                                personal website, etc.)
-                            </p>
-                        </div>
-
-                        <div>
-                            <button
-                                type="submit"
-                                class="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded transition-colors"
-                            >
-                                Submit Application
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            <script>
-                function openModal(jobTitle) {
-                    document.getElementById("jobTitle").textContent = jobTitle;
-                    document.getElementById("position").value = jobTitle;
-                    document
-                        .getElementById("applicationModal")
-                        .classList.remove("hidden");
-                    document.body.style.overflow = "hidden";
-                }
-
-                function closeModal() {
-                    document
-                        .getElementById("applicationModal")
-                        .classList.add("hidden");
-                    document.body.style.overflow = "auto";
-                    document.getElementById("applicationForm").reset();
-                }
-
-                document
-                    .getElementById("applicationForm")
-                    .addEventListener("submit", function (e) {
-                        e.preventDefault();
-
-                        const form = e.target;
-                        const data = new FormData(form);
-
-                        fetch("https://formspree.io/f/mrbpqbra", {
-                            method: "POST",
-                            body: data,
-                            headers: {
-                                Accept: "application/json",
-                            },
-                        })
-                            .then((response) => {
-                                if (response.ok) {
-                                    alert(
-                                        "Thank you for your application! We will review it and get back to you soon.",
-                                    );
-                                    closeModal();
-                                } else {
-                                    response.json().then((data) => {
-                                        if (Object.hasOwn(data, "errors")) {
-                                            alert(
-                                                data.errors
-                                                    .map(
-                                                        (error) =>
-                                                            error.message,
-                                                    )
-                                                    .join(", "),
-                                            );
-                                        } else {
-                                            alert(
-                                                "Oops! There was a problem submitting your form",
-                                            );
-                                        }
-                                    });
-                                }
-                            })
-                            .catch((error) => {
-                                alert(
-                                    "Oops! There was a problem submitting your form",
-                                );
-                                console.error(error);
-                            });
-                    });
-
-                // Close modal when clicking outside of it
-                document
-                    .getElementById("applicationModal")
-                    .addEventListener("click", function (e) {
-                        if (e.target === this) {
-                            closeModal();
-                        }
-                    });
-            </script>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="py-16">
-            <div class="container mx-auto px-6">
-                <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">
-                    About Sandbox.Ventures
-                </h2>
-
-                <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                    <div class="bg-gray-50 p-5 rounded border border-gray-100">
-                        <div
-                            class="w-10 h-10 rounded-full bg-blue-200 flex items-center justify-center mb-4"
-                        >
-                            <i class="fas fa-users text-blue-600"></i>
-                        </div>
-                        <h3 class="text-lg font-semibold text-gray-800 mb-3">
-                            Our Team
-                        </h3>
-                        <p class="text-gray-700">
-                            Sandbox.Ventures was founded by a team of
-                            experienced entrepreneurs with backgrounds in
-                            fintech and technology. The founding team members
-                            were all part of Clearhaus, a leading European
-                            payment company that several of them previously
-                            founded and successfully scaled.
-                        </p>
-                        <p class="text-gray-700 mt-4">
-                            Our team has built products, grown tech teams, and
-                            solved real problems for real customers. With
-                            expertise in payments, coding, and business, we
-                            identify opportunities and execute efficiently in
-                            today's market.
-                        </p>
-                    </div>
-
-                    <div class="bg-gray-50 p-5 rounded border border-gray-100">
-                        <div
-                            class="w-10 h-10 rounded-full bg-purple-200 flex items-center justify-center mb-4"
-                        >
-                            <i class="fas fa-horse text-purple-600"></i>
-                        </div>
-                        <h3 class="text-lg font-semibold text-gray-800 mb-3">
-                            Our Vision
-                        </h3>
-                        <p class="text-gray-700">
-                            Sandbox.Ventures moves away from pursuing unicorns
-                            at all costs. Instead, we build a portfolio of
-                            profitable, sustainable SaaS businesses addressing
-                            genuine market needs.
-                        </p>
-                        <p class="text-gray-700 mt-4">
-                            We create valuable technology through lean execution
-                            and sustainable business models. Our focus on early
-                            profitability builds resilient businesses that
-                            deliver long-term value. Our "100 horses instead of
-                            unicorns" philosophy prioritizes multiple practical
-                            successes over high-risk moonshots.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer id="contact" class="bg-gray-100 text-gray-600 py-10">
-            <div class="container mx-auto px-6">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-                    <div class="text-center md:text-left">
-                        <h3
-                            class="text-lg font-semibold text-gray-800 rounded-full bg-green-100 inline-flex items-center"
-                        >
-                            Sandbox.Ventures
-                            <img class="px-2 h-[1em]" src="/favicon.svg" />
-                        </h3>
-                        <p class="mt-2 text-sm">The SaaS product factory</p>
-                        <div
-                            class="mt-4 flex justify-center md:justify-start space-x-4"
-                        >
-                            <a
-                                href="https://www.linkedin.com/company/sandboxventures"
-                                class="text-gray-500 hover:text-gray-700 transition-colors"
-                            >
-                                <i class="fab fa-linkedin text-xl"></i>
-                            </a>
-                            <a
-                                href="https://github.com/sandbox-ventures"
-                                class="text-gray-500 hover:text-gray-700 transition-colors"
-                            >
-                                <i class="fab fa-github text-xl"></i>
-                            </a>
-                            <a
-                                href="mailto:hello@sandbox.ventures"
-                                class="text-gray-500 hover:text-gray-700 transition-colors"
-                            >
-                                <i class="fas fa-envelope text-xl"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="text-center hidden md:block">
-                        <img
-                            src="/favicon.svg"
-                            alt="Sandbox.Ventures Logo"
-                            class="h-16 mx-auto opacity-70"
-                        />
-                    </div>
-
-                    <div class="text-center md:text-right">
-                        <div class="text-gray-600">
-                            <p>Sandbox.Ventures</p>
-                            <p>
-                                <a
-                                    href="https://maps.app.goo.gl/i54ExC1dJKBoJFhw5"
-                                    >P. O. Pedersens Vej 2</a
-                                >
-                            </p>
-                            <p>8200 Aarhus N, Denmark</p>
-                            <p class="font-medium mt-2">
-                                <a
-                                    href="mailto:hello@sandbox.ventures"
-                                    class="text-blue-500 hover:underline"
-                                    >hello@sandbox.ventures</a
-                                >
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    class="border-t border-gray-200 mt-6 pt-6 text-center text-sm"
-                >
-                    <p>
-                        &copy;
-                        <script>
-                            document.write(new Date().getFullYear());
-                        </script>
-                        Sandbox.Ventures. All rights reserved.
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">More Coming Soon</h3>
+                    <p class="text-gray-600">
+                        Additional products are in active development and will be launching soon. Our team is currently validating new ideas and building solutions to address emerging market needs in various business sectors.
                     </p>
                 </div>
             </div>
-        </footer>
-    </body>
+        </div>
+    </section>
+
+    <!-- Jobs Section -->
+    <section id="jobs" class="py-16 text-center">
+        <div class="container mx-auto px-6">
+            <h2 class="text-2xl font-bold text-gray-800 mb-8">Join Our Team</h2>
+            <p class="text-gray-600 mb-10">
+                We're looking for talented individuals to help us build the next generation of practical SaaS products
+            </p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-5 rounded border border-gray-100 text-left flex flex-col">
+                    <div class="w-10 h-10 rounded-full bg-blue-200 flex items-center justify-center mb-4">
+                        <i class="fas fa-laptop-code text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Student Developer</h3>
+                    <p class="text-gray-700 mb-2">
+                        Perfect for students looking to gain real-world experience while working on practical SaaS products.
+                    </p>
+                    <ul class="text-gray-700 mb-4 list-disc pl-5">
+                        <li>Part-time flexibility around your studies</li>
+                        <li>Hands-on experience with modern tech stacks</li>
+                        <li>Mentorship from experienced developers</li>
+                        <li>Opportunity to contribute to real products</li>
+                        <li>Valuable industry experience for your resume</li>
+                    </ul>
+                    <div class="mt-auto flex justify-center">
+                        <button onclick="openModal('Student Developer')" class="inline-block px-4 py-2 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition transform hover:-translate-y-1 shadow-sm hover:shadow">Apply Now</button>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-5 rounded border border-gray-100 text-left flex flex-col">
+                    <div class="w-10 h-10 rounded-full bg-green-200 flex items-center justify-center mb-4">
+                        <i class="fas fa-code text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Junior Developer</h3>
+                    <p class="text-gray-700 mb-2">
+                        For developers early in their career looking to grow their skills in a fast-paced environment.
+                    </p>
+                    <ul class="text-gray-700 mb-4 list-disc pl-5">
+                        <li>Work across full-stack development</li>
+                        <li>Accelerated learning and career progression</li>
+                        <li>Ownership of features from concept to deployment</li>
+                        <li>Collaborative team environment</li>
+                        <li>Exposure to multiple products and technologies</li>
+                    </ul>
+                    <div class="mt-auto flex justify-center">
+                        <button onclick="openModal('Junior Developer')" class="inline-block px-4 py-2 bg-green-600 text-white font-medium rounded-md hover:bg-green-700 transition transform hover:-translate-y-1 shadow-sm hover:shadow">Apply Now</button>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-5 rounded border border-gray-100 text-left flex flex-col">
+                    <div class="w-10 h-10 rounded-full bg-purple-200 flex items-center justify-center mb-4">
+                        <i class="fas fa-chart-line text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Growth Hacker</h3>
+                    <p class="text-gray-700 mb-2">
+                        Creative marketer with technical skills to help our products reach their target audiences.
+                    </p>
+                    <ul class="text-gray-700 mb-4 list-disc pl-5">
+                        <li>Design and execute innovative marketing campaigns</li>
+                        <li>Analyze user acquisition data and optimize funnels</li>
+                        <li>Collaborate with product teams on go-to-market strategies</li>
+                        <li>Experiment with new channels and approaches</li>
+                        <li>Build automation to scale growth efforts</li>
+                    </ul>
+                    <div class="mt-auto flex justify-center">
+                        <button onclick="openModal('Growth Hacker')" class="inline-block px-4 py-2 bg-purple-600 text-white font-medium rounded-md hover:bg-purple-700 transition transform hover:-translate-y-1 shadow-sm hover:shadow">Apply Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Application Modal -->
+        <div id="applicationModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
+            <div class="bg-white rounded-lg w-full max-w-md mx-4 p-6 max-h-90vh overflow-y-auto">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-xl font-bold text-gray-800">Apply for <span id="jobTitle">Position</span></h3>
+                    <button onclick="closeModal()" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <form id="applicationForm" class="space-y-4 text-left">
+                    <input type="hidden" id="position" name="position" value="">
+
+                    <div>
+                        <label for="fullName" class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+                        <input type="text" id="fullName" name="fullName" class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500" required>
+                    </div>
+
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email *</label>
+                        <input type="email" id="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500" required>
+                    </div>
+
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone *</label>
+                        <input type="tel" id="phone" name="phone" class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500" required>
+                    </div>
+
+                    <div>
+                        <label for="linkedin" class="block text-sm font-medium text-gray-700 mb-1">LinkedIn URL *</label>
+                        <input type="url" id="linkedin" name="linkedin" class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500" required>
+                    </div>
+
+                    <div>
+                        <label for="resumeUrl" class="block text-sm font-medium text-gray-700 mb-1">Resume/CV URL *</label>
+                        <input type="url" id="resumeUrl" name="resumeUrl" class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500" required>
+                        <p class="text-xs text-gray-500 mt-1">Link to your resume (Google Drive, Dropbox, personal website, etc.)</p>
+                    </div>
+
+                    <div>
+                        <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded transition-colors">Submit Application</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <script>
+            function openModal(jobTitle) {
+                document.getElementById('jobTitle').textContent = jobTitle;
+                document.getElementById('position').value = jobTitle;
+                document.getElementById('applicationModal').classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal() {
+                document.getElementById('applicationModal').classList.add('hidden');
+                document.body.style.overflow = 'auto';
+                document.getElementById('applicationForm').reset();
+            }
+
+            document.getElementById('applicationForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const form = e.target;
+                const data = new FormData(form);
+
+                fetch('https://formspree.io/f/mrbpqbra', {
+                    method: 'POST',
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        alert('Thank you for your application! We will review it and get back to you soon.');
+                        closeModal();
+                    } else {
+                        response.json().then(data => {
+                            if (Object.hasOwn(data, 'errors')) {
+                                alert(data.errors.map(error => error.message).join(', '));
+                            } else {
+                                alert('Oops! There was a problem submitting your form');
+                            }
+                        });
+                    }
+                })
+                .catch(error => {
+                    alert('Oops! There was a problem submitting your form');
+                    console.error(error);
+                });
+            });
+
+            // Close modal when clicking outside of it
+            document.getElementById('applicationModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeModal();
+                }
+            });
+        </script>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">About Sandbox.Ventures</h2>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="bg-gray-50 p-5 rounded border border-gray-100">
+                    <div class="w-10 h-10 rounded-full bg-blue-200 flex items-center justify-center mb-4">
+                        <i class="fas fa-users text-blue-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3">Our Team</h3>
+                    <p class="text-gray-700">
+                        Sandbox.Ventures was founded by a team of experienced entrepreneurs with backgrounds in fintech and technology. The founding team members were all part of Clearhaus, a leading European payment company that several of them previously founded and successfully scaled.
+                    </p>
+                    <p class="text-gray-700 mt-4">
+                        Our team has built products, grown tech teams, and solved real problems for real customers. With expertise in payments, coding, and business, we identify opportunities and execute efficiently in today's market.
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 p-5 rounded border border-gray-100">
+                    <div class="w-10 h-10 rounded-full bg-purple-200 flex items-center justify-center mb-4">
+                        <i class="fas fa-horse text-purple-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3">Our Vision</h3>
+                    <p class="text-gray-700">
+                        Sandbox.Ventures moves away from pursuing unicorns at all costs. Instead, we build a portfolio of profitable, sustainable SaaS businesses addressing genuine market needs.
+                    </p>
+                    <p class="text-gray-700 mt-4">
+                        We create valuable technology through lean execution and sustainable business models. Our focus on early profitability builds resilient businesses that deliver long-term value. Our "100 horses instead of unicorns" philosophy prioritizes multiple practical successes over high-risk moonshots.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-100 text-gray-600 py-10">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                <div class="text-center md:text-left">
+                    <h3 class="text-lg font-semibold text-gray-800  rounded-full bg-green-100 inline-flex items-center">Sandbox.Ventures <img class="px-2 h-[1em]" src="/favicon.svg"></h3>
+                    <p class="mt-2 text-sm">The SaaS product factory</p>
+                    <div class="mt-4 flex justify-center md:justify-start space-x-4">
+                        <a href="https://www.linkedin.com/company/sandboxventures" class="text-gray-500 hover:text-gray-700 transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="https://github.com/sandbox-ventures" class="text-gray-500 hover:text-gray-700 transition-colors">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="mailto:hello@sandbox.ventures" class="text-gray-500 hover:text-gray-700 transition-colors">
+                            <i class="fas fa-envelope text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="text-center hidden md:block">
+                    <img src="/favicon.svg" alt="Sandbox.Ventures Logo" class="h-16 mx-auto opacity-70">
+                </div>
+
+                <div class="text-center md:text-right">
+                    <div class="text-gray-600">
+                        <p>Sandbox.Ventures</p>
+                        <p><a href="https://maps.app.goo.gl/i54ExC1dJKBoJFhw5">P. O. Pedersens Vej 2</a></p>
+                        <p>8200 Aarhus N, Denmark</p>
+                        <p class="font-medium mt-2"><a href="mailto:hello@sandbox.ventures" class="text-blue-500 hover:underline">hello@sandbox.ventures</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 mt-6 pt-6 text-center text-sm">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> Sandbox.Ventures. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
 </html>
