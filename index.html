@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="bg-white scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,334 +19,500 @@
     <meta name="twitter:image" content="https://www.sandbox.ventures/favicon.svg">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-104SFGLQ6B"></script>
     <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-104SFGLQ6B');</script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'fade-in': 'fadeIn 0.6s ease-out forwards',
+                        'slide-up': 'slideUp 0.6s ease-out forwards',
+                        'slide-down': 'slideDown 0.6s ease-out forwards',
+                        'slide-left': 'slideLeft 0.6s ease-out forwards',
+                        'slide-right': 'slideRight 0.6s ease-out forwards',
+                        'scale-in': 'scaleIn 0.5s ease-out forwards',
+                        'rotate-in': 'rotateIn 0.6s ease-out forwards',
+                        'bounce-in': 'bounceIn 0.8s ease-out forwards',
+                        'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
+                        'shimmer': 'shimmer 2s linear infinite',
+                        'wave': 'wave 1.5s ease-in-out infinite',
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideLeft {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes slideRight {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes rotateIn {
+            from { opacity: 0; transform: rotate(-10deg) scale(0.9); }
+            to { opacity: 1; transform: rotate(0) scale(1); }
+        }
+        @keyframes bounceIn {
+            0% { opacity: 0; transform: scale(0.3); }
+            50% { transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(99, 102, 241, 0.6); }
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+        @keyframes wave {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(20deg); }
+            75% { transform: rotate(-15deg); }
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .dark .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+        }
+        .dark .hero-gradient {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        .dark .card-hover:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        .nav-blur {
+            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.85);
+        }
+        .dark .nav-blur {
+            background: rgba(15, 23, 42, 0.85);
+        }
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Directional scroll animations */
+        .animate-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .animate-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .animate-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .animate-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .animate-scale {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .animate-scale.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+        /* Stagger delays for children */
+        .stagger-children > *:nth-child(1) { transition-delay: 0ms; }
+        .stagger-children > *:nth-child(2) { transition-delay: 100ms; }
+        .stagger-children > *:nth-child(3) { transition-delay: 200ms; }
+        .stagger-children > *:nth-child(4) { transition-delay: 300ms; }
+        .stagger-children > *:nth-child(5) { transition-delay: 400ms; }
+        .stagger-children > *:nth-child(6) { transition-delay: 500ms; }
+        /* Icon hover animations */
+        .icon-bounce:hover i {
+            animation: bounceIn 0.6s ease-out;
+        }
+        .icon-spin:hover i {
+            animation: spin 0.6s ease-out;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        /* Button shimmer effect */
+        .btn-shimmer {
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-shimmer::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+        .btn-shimmer:hover::after {
+            left: 100%;
+        }
+        /* Gradient text animation */
+        .gradient-animate {
+            background-size: 200% auto;
+            animation: shimmer 3s linear infinite;
+        }
+        /* Card reveal animation */
+        .card-reveal {
+            opacity: 0;
+            transform: translateY(40px) rotateX(10deg);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-origin: bottom center;
+        }
+        .card-reveal.visible {
+            opacity: 1;
+            transform: translateY(0) rotateX(0);
+        }
+        /* Parallax subtle effect */
+        .parallax-slow {
+            transition: transform 0.1s ease-out;
+        }
+        /* Counter animation placeholder */
+        .count-up {
+            display: inline-block;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
-<body class="flex min-h-screen flex-col bg-white">
+<body class="font-sans antialiased bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
 
     <!-- Header -->
-    <header class="fixed z-50 w-full bg-white shadow-sm py-3">
-        <div class="container mx-auto px-6 flex justify-between items-center">
-            <h1 class="text-xl font-bold text-gray-800 inline-flex items-center"><a class="inline-flex" href="/">Sandbox.Ventures <img class="px-2 h-[1em]" src="/favicon.svg"></a></h1>
-            <button class="md:hidden text-gray-800" onclick="document.getElementById('menu').classList.toggle('hidden')">
-                <i class="fas fa-bars text-xl"></i>
-            </button>
-            <nav id="menu" class="hidden md:block absolute md:relative top-16 md:top-0 left-0 w-full md:w-auto z-50">
-                <ul class="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-6 p-4 md:p-0 bg-white md:bg-transparent shadow-md md:shadow-none">
-                    <li><a href="#philosophy" class="text-gray-700 hover:text-gray-900 transition block">Philosophy</a></li>
-                    <li><a href="#products" class="text-gray-700 hover:text-gray-900 transition block">Products</a></li>
-                    <li><a href="#jobs" class="text-gray-700 hover:text-gray-900 transition block">Jobs</a></li>
-                    <li><a href="#contact" class="text-gray-700 hover:text-gray-900 transition block">Contact</a></li>
+    <header class="fixed z-50 w-full nav-blur shadow-sm transition-all duration-300">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="/" class="flex items-center gap-2 group">
+                    <img class="h-8 transition-transform group-hover:scale-110" src="/favicon.svg" alt="Logo">
+                    <span class="text-xl font-bold text-gray-900 dark:text-white">Sandbox.Ventures</span>
+                </a>
+
+                <div class="flex items-center gap-4">
+                    <!-- Dark Mode Toggle -->
+                    <button id="darkModeToggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors">
+                        <i class="fas fa-moon text-gray-600 dark:hidden"></i>
+                        <i class="fas fa-sun text-yellow-400 hidden dark:block"></i>
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors">
+                        <i class="fas fa-bars text-xl text-gray-600 dark:text-gray-300"></i>
+                    </button>
+
+                    <!-- Desktop Navigation -->
+                    <nav class="hidden md:block">
+                        <ul class="flex items-center gap-8">
+                            <li><a href="#philosophy" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-indigo-500 hover:after:w-full after:transition-all">Philosophy</a></li>
+                            <li><a href="#products" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-indigo-500 hover:after:w-full after:transition-all">Products</a></li>
+                            <li><a href="#contact" class="px-5 py-2.5 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-medium rounded-full hover:shadow-lg hover:shadow-indigo-500/30 transition-all">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <nav id="mobileMenu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-200 dark:border-slate-700 pt-4">
+                <ul class="flex flex-col gap-4">
+                    <li><a href="#philosophy" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium transition-colors block py-2">Philosophy</a></li>
+                    <li><a href="#products" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium transition-colors block py-2">Products</a></li>
+                    <li><a href="#contact" class="px-5 py-2.5 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-medium rounded-full text-center block">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="pt-28 pb-16 bg-gray-50 text-center">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-gray-800" id="typingAnimation">The SaaS Product Factory</h2>
-            <p class="mt-4 text-lg text-gray-600">No unicorns, but 100 horses. We build real solutions that solve real problems.</p>
-            <a href="#philosophy" class="mt-6 inline-block px-5 py-2 bg-blue-500 text-white font-medium rounded hover:bg-blue-600 transition">Our Approach</a>
+    <section class="min-h-screen hero-gradient flex items-center pt-20 relative overflow-hidden">
+        <!-- Animated Background Shapes -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-indigo-300/20 dark:bg-indigo-500/10 rounded-full blur-3xl animate-float"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-300/20 dark:bg-purple-500/10 rounded-full blur-3xl animate-float" style="animation-delay: -3s;"></div>
+            <div class="absolute top-1/2 right-1/3 w-48 h-48 bg-pink-300/20 dark:bg-pink-500/10 rounded-full blur-3xl animate-float" style="animation-delay: -1.5s;"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-100 dark:bg-indigo-900/50 rounded-full text-indigo-700 dark:text-indigo-300 font-medium text-sm mb-8 animate-fade-in opacity-0" style="animation-delay: 0.2s;">
+                    <i class="fas fa-horse animate-wave"></i>
+                    <span>100 Horses, Not Unicorns</span>
+                </div>
+
+                <h1 class="text-5xl md:text-7xl font-extrabold mb-6 animate-slide-up opacity-0" style="animation-delay: 0.4s;">
+                    The SaaS
+                    <span class="gradient-text gradient-animate"> Product Factory</span>
+                </h1>
+
+                <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-10 max-w-2xl mx-auto animate-slide-up opacity-0" style="animation-delay: 0.6s;">
+                    We build real solutions that solve real problems. Practical, efficient, and sustainable SaaS products.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up opacity-0" style="animation-delay: 0.8s;">
+                    <a href="#products" class="btn-shimmer px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-semibold rounded-full hover:shadow-xl hover:shadow-indigo-500/30 transition-all hover:-translate-y-1 hover:scale-105">
+                        Explore Products
+                        <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                    </a>
+                    <a href="#philosophy" class="px-8 py-4 bg-white dark:bg-slate-800 text-gray-900 dark:text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 hover:scale-105 border border-gray-200 dark:border-slate-700">
+                        Our Philosophy
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+            <a href="#philosophy" class="text-gray-400 dark:text-gray-600">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </a>
         </div>
     </section>
 
     <!-- Philosophy Section -->
-    <section id="philosophy" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-2xl font-bold text-gray-800 text-center mb-10">Our Philosophy</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-gray-50 p-5 rounded border border-gray-100">
-                    <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center mb-3">
-                        <i class="fas fa-puzzle-piece text-blue-500"></i>
+    <section id="philosophy" class="py-24 bg-white dark:bg-slate-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 animate-on-scroll">
+                <span class="text-indigo-500 font-semibold text-sm uppercase tracking-wider">Our Approach</span>
+                <h2 class="text-4xl md:text-5xl font-bold mt-3 mb-4">How We Build</h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">
+                    Our philosophy guides every decision we make, from product ideation to execution.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto stagger-children">
+                <div class="glass-card p-8 rounded-2xl card-hover card-reveal icon-bounce">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center mb-6 shadow-lg shadow-blue-500/30 transition-transform hover:scale-110 hover:rotate-3">
+                        <i class="fas fa-puzzle-piece text-white text-xl"></i>
                     </div>
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Practicality</h3>
-                    <p class="text-gray-600">We focus on solutions that address genuine market needs, not chasing trends.</p>
+                    <h3 class="text-xl font-bold mb-3">Practicality First</h3>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">We focus on solutions that address genuine market needs, not chasing trends or building for hypothetical futures.</p>
                 </div>
 
-                <div class="bg-gray-50 p-5 rounded border border-gray-100">
-                    <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mb-3">
-                        <i class="fas fa-bolt text-green-500"></i>
+                <div class="glass-card p-8 rounded-2xl card-hover card-reveal icon-bounce">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center mb-6 shadow-lg shadow-green-500/30 transition-transform hover:scale-110 hover:rotate-3">
+                        <i class="fas fa-bolt text-white text-xl"></i>
                     </div>
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Efficiency</h3>
-                    <p class="text-gray-600">Making the most of limited resources by maximizing development productivity.</p>
+                    <h3 class="text-xl font-bold mb-3">Maximum Efficiency</h3>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Making the most of limited resources by maximizing development productivity and minimizing waste.</p>
                 </div>
 
-                <div class="bg-gray-50 p-5 rounded border border-gray-100">
-                    <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center mb-3">
-                        <i class="fas fa-rocket text-purple-500"></i>
+                <div class="glass-card p-8 rounded-2xl card-hover card-reveal icon-bounce">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500 to-violet-600 flex items-center justify-center mb-6 shadow-lg shadow-purple-500/30 transition-transform hover:scale-110 hover:rotate-3">
+                        <i class="fas fa-rocket text-white text-xl"></i>
                     </div>
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Speed</h3>
-                    <p class="text-gray-600">Getting to market quickly to validate ideas and deliver value to customers.</p>
+                    <h3 class="text-xl font-bold mb-3">Speed to Market</h3>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Getting to market quickly to validate ideas and deliver value to customers without unnecessary delays.</p>
                 </div>
 
-                <div class="bg-gray-50 p-5 rounded border border-gray-100">
-                    <div class="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center mb-3">
-                        <i class="fas fa-seedling text-red-500"></i>
+                <div class="glass-card p-8 rounded-2xl card-hover card-reveal icon-bounce">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-rose-500 to-pink-600 flex items-center justify-center mb-6 shadow-lg shadow-rose-500/30 transition-transform hover:scale-110 hover:rotate-3">
+                        <i class="fas fa-seedling text-white text-xl"></i>
                     </div>
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Sustainability</h3>
-                    <p class="text-gray-600">Building businesses with sound economics from day one, focusing on profitability.</p>
+                    <h3 class="text-xl font-bold mb-3">Sustainability</h3>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Building businesses with sound economics from day one, focusing on profitability over vanity metrics.</p>
                 </div>
 
-                <div class="bg-gray-50 p-5 rounded border border-gray-100">
-                    <div class="w-8 h-8 rounded-full bg-yellow-100 flex items-center justify-center mb-3">
-                        <i class="fas fa-horse text-yellow-500"></i>
+                <div class="glass-card p-8 rounded-2xl card-hover card-reveal icon-bounce">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center mb-6 shadow-lg shadow-amber-500/30 transition-transform hover:scale-110 hover:rotate-3">
+                        <i class="fas fa-horse text-white text-xl"></i>
                     </div>
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2">100 Horses, Not Unicorns</h3>
-                    <p class="text-gray-600">Building a portfolio of solid, practical SaaS products that solve real problems.</p>
+                    <h3 class="text-xl font-bold mb-3">100 Horses Philosophy</h3>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Building a portfolio of solid, practical SaaS products rather than chasing a single unicorn dream.</p>
                 </div>
 
-                <div class="bg-gray-50 p-5 rounded border border-gray-100">
-                    <div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center mb-3">
-                        <i class="fas fa-users text-indigo-500"></i>
+                <div class="glass-card p-8 rounded-2xl card-hover card-reveal icon-bounce">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center mb-6 shadow-lg shadow-indigo-500/30 transition-transform hover:scale-110 hover:rotate-3">
+                        <i class="fas fa-users text-white text-xl"></i>
                     </div>
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Small, Focused Teams</h3>
-                    <p class="text-gray-600">Small teams of highly skilled individuals who can move quickly and decisively.</p>
+                    <h3 class="text-xl font-bold mb-3">Small, Elite Teams</h3>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Small teams of highly skilled individuals who can move quickly and make decisive, impactful decisions.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Products Section -->
-    <section id="products" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-2xl font-bold text-gray-800 text-center mb-10">Our Products</h2>
-            <p class="text-gray-600 mb-10 text-center">
-                A growing stable of practical SaaS solutions solving real business problems
-            </p>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-gray-50 p-5 rounded border border-gray-100">
-                    <div class="w-14 h-14 rounded-full bg-gray-200 flex items-center justify-center mb-3">
-                        <img src="/img/nemboks-logo.svg" alt="Nemboks Logo" class="h-5">
+    <section id="products" class="py-24 bg-gray-50 dark:bg-slate-800/50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 animate-on-scroll">
+                <span class="text-indigo-500 font-semibold text-sm uppercase tracking-wider">Our Portfolio</span>
+                <h2 class="text-4xl md:text-5xl font-bold mt-3 mb-4">Products We're Building</h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">
+                    A growing stable of practical SaaS solutions solving real business problems.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto stagger-children">
+                <!-- Nemboks -->
+                <div class="bg-white dark:bg-slate-800 rounded-3xl overflow-hidden card-hover shadow-lg card-reveal group">
+                    <div class="h-48 flex items-center justify-center relative overflow-hidden" style="background: linear-gradient(135deg, #FF6A6D 0%, #ff8587 50%, #FF6A6D 100%);">
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500"></div>
+                        <img src="/img/nemboks-logo.svg" alt="Nemboks Logo" class="h-12 relative z-10 brightness-0 invert transition-transform duration-500 group-hover:scale-110">
                     </div>
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Nemboks.dk</h3>
-                    <p class="text-gray-600">
-                        Enables Danish companies to receive and manage their official Digital Post communications seamlessly forwarded to their regular email inbox without technical complexity or administrative burden.
-                    </p>
-                    <a href="https://www.nemboks.dk" class="text-blue-500 hover:underline mt-3 inline-block">Learn more →</a>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3 transition-colors group-hover:text-indigo-500">Nemboks.dk</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                            Enables Danish companies to receive and manage their official Digital Post communications seamlessly forwarded to their regular email inbox.
+                        </p>
+                        <a href="https://www.nemboks.dk" class="inline-flex items-center gap-2 text-indigo-500 hover:text-indigo-600 font-semibold group/link">
+                            Visit Website
+                            <i class="fas fa-arrow-right transition-transform group-hover/link:translate-x-2"></i>
+                        </a>
+                    </div>
                 </div>
 
-                <div class="bg-gray-50 p-5 rounded border border-gray-100">
-                    <div class="w-14 h-14 rounded-full bg-gray-200 flex items-center justify-center mb-3">
-                        <img src="https://www.finscale.io/favicon.svg" alt="Finscale Logo" class="h-5">
+                <!-- Finscale -->
+                <div class="bg-white dark:bg-slate-800 rounded-3xl overflow-hidden card-hover shadow-lg card-reveal group">
+                    <div class="h-48 flex items-center justify-center relative overflow-hidden" style="background: linear-gradient(135deg, #1E40AF 0%, #3B5DC9 50%, #1E40AF 100%);">
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500"></div>
+                        <img src="https://www.finscale.io/favicon.svg" alt="Finscale Logo" class="h-12 relative z-10 brightness-0 invert transition-transform duration-500 group-hover:scale-110">
                     </div>
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Finscale</h3>
-                    <p class="text-gray-600">
-                        AI-driven merchant management platform for fintechs. Streamline customer onboarding, enhance compliance workflows, and optimize risk management to help fintech companies scale their operations efficiently.
-                    </p>
-                    <a href="https://www.finscale.io/" class="text-blue-500 hover:underline mt-3 inline-block">Learn more →</a>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3 transition-colors group-hover:text-indigo-500">Finscale</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                            AI-driven merchant management platform for fintechs. Streamline customer onboarding, compliance workflows, and risk management.
+                        </p>
+                        <a href="https://www.finscale.io/" class="inline-flex items-center gap-2 text-indigo-500 hover:text-indigo-600 font-semibold group/link">
+                            Visit Website
+                            <i class="fas fa-arrow-right transition-transform group-hover/link:translate-x-2"></i>
+                        </a>
+                    </div>
                 </div>
 
-                <div class="bg-gray-50 p-5 rounded border border-gray-100">
-                    <div class="w-14 h-14 rounded-full bg-gray-200 flex items-center justify-center mb-3">
-                        <i class="fas fa-rocket text-purple-500"></i>
+                <!-- Coming Soon -->
+                <div class="bg-white dark:bg-slate-800 rounded-3xl overflow-hidden card-hover shadow-lg card-reveal group">
+                    <div class="h-48 bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500"></div>
+                        <i class="fas fa-rocket text-white text-5xl relative z-10 transition-transform duration-500 group-hover:scale-125 group-hover:-rotate-12"></i>
                     </div>
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2">More Coming Soon</h3>
-                    <p class="text-gray-600">
-                        Additional products are in active development and will be launching soon. Our team is currently validating new ideas and building solutions to address emerging market needs in various business sectors.
-                    </p>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3 transition-colors group-hover:text-purple-500">More Coming Soon</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                            Additional products are in active development. We're validating new ideas and building solutions for emerging market needs.
+                        </p>
+                        <span class="inline-flex items-center gap-2 text-gray-400 font-semibold">
+                            <i class="fas fa-clock animate-pulse"></i>
+                            In Development
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Jobs Section -->
-    <section id="jobs" class="py-16 text-center">
+    <!-- Partnership Section -->
+    <section id="partnership" class="py-24 bg-white dark:bg-slate-900">
         <div class="container mx-auto px-6">
-            <h2 class="text-2xl font-bold text-gray-800 mb-8">Join Our Team</h2>
-            <p class="text-gray-600 mb-10">
-                We're looking for talented individuals to help us build the next generation of practical SaaS products
-            </p>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-gray-50 p-5 rounded border border-gray-100 text-left flex flex-col">
-                    <div class="w-10 h-10 rounded-full bg-blue-200 flex items-center justify-center mb-4">
-                        <i class="fas fa-laptop-code text-blue-600"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Student Developer</h3>
-                    <p class="text-gray-700 mb-2">
-                        Perfect for students looking to gain real-world experience while working on practical SaaS products.
-                    </p>
-                    <ul class="text-gray-700 mb-4 list-disc pl-5">
-                        <li>Part-time flexibility around your studies</li>
-                        <li>Hands-on experience with modern tech stacks</li>
-                        <li>Mentorship from experienced developers</li>
-                        <li>Opportunity to contribute to real products</li>
-                        <li>Valuable industry experience for your resume</li>
-                    </ul>
-                    <div class="mt-auto flex justify-center">
-                        <button onclick="openModal('Student Developer')" class="inline-block px-4 py-2 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition transform hover:-translate-y-1 shadow-sm hover:shadow">Apply Now</button>
-                    </div>
-                </div>
-
-                <div class="bg-gray-50 p-5 rounded border border-gray-100 text-left flex flex-col">
-                    <div class="w-10 h-10 rounded-full bg-green-200 flex items-center justify-center mb-4">
-                        <i class="fas fa-code text-green-600"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Junior Developer</h3>
-                    <p class="text-gray-700 mb-2">
-                        For developers early in their career looking to grow their skills in a fast-paced environment.
-                    </p>
-                    <ul class="text-gray-700 mb-4 list-disc pl-5">
-                        <li>Work across full-stack development</li>
-                        <li>Accelerated learning and career progression</li>
-                        <li>Ownership of features from concept to deployment</li>
-                        <li>Collaborative team environment</li>
-                        <li>Exposure to multiple products and technologies</li>
-                    </ul>
-                    <div class="mt-auto flex justify-center">
-                        <button onclick="openModal('Junior Developer')" class="inline-block px-4 py-2 bg-green-600 text-white font-medium rounded-md hover:bg-green-700 transition transform hover:-translate-y-1 shadow-sm hover:shadow">Apply Now</button>
-                    </div>
-                </div>
-
-                <div class="bg-gray-50 p-5 rounded border border-gray-100 text-left flex flex-col">
-                    <div class="w-10 h-10 rounded-full bg-purple-200 flex items-center justify-center mb-4">
-                        <i class="fas fa-chart-line text-purple-600"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Growth Hacker</h3>
-                    <p class="text-gray-700 mb-2">
-                        Creative marketer with technical skills to help our products reach their target audiences.
-                    </p>
-                    <ul class="text-gray-700 mb-4 list-disc pl-5">
-                        <li>Design and execute innovative marketing campaigns</li>
-                        <li>Analyze user acquisition data and optimize funnels</li>
-                        <li>Collaborate with product teams on go-to-market strategies</li>
-                        <li>Experiment with new channels and approaches</li>
-                        <li>Build automation to scale growth efforts</li>
-                    </ul>
-                    <div class="mt-auto flex justify-center">
-                        <button onclick="openModal('Growth Hacker')" class="inline-block px-4 py-2 bg-purple-600 text-white font-medium rounded-md hover:bg-purple-700 transition transform hover:-translate-y-1 shadow-sm hover:shadow">Apply Now</button>
-                    </div>
-                </div>
+            <div class="max-w-4xl mx-auto text-center animate-on-scroll">
+                <span class="text-indigo-500 font-semibold text-sm uppercase tracking-wider">Partner With Us</span>
+                <h2 class="text-4xl md:text-5xl font-bold mt-3 mb-6">Build With Us</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
+                    We partner with ambitious founders to turn validated ideas into category leaders. We spot opportunities, build strategically, and accelerate what works. Combining brand expertise, cutting-edge technology, and smart capital, we create enduring companies built for sustainable growth.
+                </p>
             </div>
         </div>
-
-        <!-- Application Modal -->
-        <div id="applicationModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
-            <div class="bg-white rounded-lg w-full max-w-md mx-4 p-6 max-h-90vh overflow-y-auto">
-                <div class="flex justify-between items-center mb-4">
-                    <h3 class="text-xl font-bold text-gray-800">Apply for <span id="jobTitle">Position</span></h3>
-                    <button onclick="closeModal()" class="text-gray-500 hover:text-gray-700">
-                        <i class="fas fa-times"></i>
-                    </button>
-                </div>
-                <form id="applicationForm" class="space-y-4 text-left">
-                    <input type="hidden" id="position" name="position" value="">
-
-                    <div>
-                        <label for="fullName" class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
-                        <input type="text" id="fullName" name="fullName" class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500" required>
-                    </div>
-
-                    <div>
-                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email *</label>
-                        <input type="email" id="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500" required>
-                    </div>
-
-                    <div>
-                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone *</label>
-                        <input type="tel" id="phone" name="phone" class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500" required>
-                    </div>
-
-                    <div>
-                        <label for="linkedin" class="block text-sm font-medium text-gray-700 mb-1">LinkedIn URL *</label>
-                        <input type="url" id="linkedin" name="linkedin" class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500" required>
-                    </div>
-
-                    <div>
-                        <label for="resumeUrl" class="block text-sm font-medium text-gray-700 mb-1">Resume/CV URL *</label>
-                        <input type="url" id="resumeUrl" name="resumeUrl" class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500" required>
-                        <p class="text-xs text-gray-500 mt-1">Link to your resume (Google Drive, Dropbox, personal website, etc.)</p>
-                    </div>
-
-                    <div>
-                        <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded transition-colors">Submit Application</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <script>
-            function openModal(jobTitle) {
-                document.getElementById('jobTitle').textContent = jobTitle;
-                document.getElementById('position').value = jobTitle;
-                document.getElementById('applicationModal').classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-            }
-
-            function closeModal() {
-                document.getElementById('applicationModal').classList.add('hidden');
-                document.body.style.overflow = 'auto';
-                document.getElementById('applicationForm').reset();
-            }
-
-            document.getElementById('applicationForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-
-                const form = e.target;
-                const data = new FormData(form);
-
-                fetch('https://formspree.io/f/mrbpqbra', {
-                    method: 'POST',
-                    body: data,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                })
-                .then(response => {
-                    if (response.ok) {
-                        alert('Thank you for your application! We will review it and get back to you soon.');
-                        closeModal();
-                    } else {
-                        response.json().then(data => {
-                            if (Object.hasOwn(data, 'errors')) {
-                                alert(data.errors.map(error => error.message).join(', '));
-                            } else {
-                                alert('Oops! There was a problem submitting your form');
-                            }
-                        });
-                    }
-                })
-                .catch(error => {
-                    alert('Oops! There was a problem submitting your form');
-                    console.error(error);
-                });
-            });
-
-            // Close modal when clicking outside of it
-            document.getElementById('applicationModal').addEventListener('click', function(e) {
-                if (e.target === this) {
-                    closeModal();
-                }
-            });
-        </script>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-16">
+    <section id="about" class="py-24 bg-gray-50 dark:bg-slate-800/50">
         <div class="container mx-auto px-6">
-            <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">About Sandbox.Ventures</h2>
+            <div class="text-center mb-16 animate-on-scroll">
+                <span class="text-indigo-500 font-semibold text-sm uppercase tracking-wider">About Us</span>
+                <h2 class="text-4xl md:text-5xl font-bold mt-3 mb-4">Who We Are</h2>
+            </div>
 
             <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                <div class="bg-gray-50 p-5 rounded border border-gray-100">
-                    <div class="w-10 h-10 rounded-full bg-blue-200 flex items-center justify-center mb-4">
-                        <i class="fas fa-users text-blue-600"></i>
+                <div class="bg-white dark:bg-slate-800 p-10 rounded-3xl shadow-lg card-hover animate-left icon-bounce">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center mb-6 shadow-lg shadow-blue-500/30 transition-transform duration-300 hover:scale-110 hover:rotate-3">
+                        <i class="fas fa-users text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-lg font-semibold text-gray-800 mb-3">Our Team</h3>
-                    <p class="text-gray-700">
+                    <h3 class="text-2xl font-bold mb-4">Our Team</h3>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
                         Sandbox.Ventures was founded by a team of experienced entrepreneurs with backgrounds in fintech and technology. The founding team members were all part of Clearhaus, a leading European payment company that several of them previously founded and successfully scaled.
                     </p>
-                    <p class="text-gray-700 mt-4">
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
                         Our team has built products, grown tech teams, and solved real problems for real customers. With expertise in payments, coding, and business, we identify opportunities and execute efficiently in today's market.
                     </p>
                 </div>
 
-                <div class="bg-gray-50 p-5 rounded border border-gray-100">
-                    <div class="w-10 h-10 rounded-full bg-purple-200 flex items-center justify-center mb-4">
-                        <i class="fas fa-horse text-purple-600"></i>
+                <div class="bg-white dark:bg-slate-800 p-10 rounded-3xl shadow-lg card-hover animate-right icon-bounce">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center mb-6 shadow-lg shadow-purple-500/30 transition-transform duration-300 hover:scale-110 hover:rotate-3">
+                        <i class="fas fa-horse text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-lg font-semibold text-gray-800 mb-3">Our Vision</h3>
-                    <p class="text-gray-700">
+                    <h3 class="text-2xl font-bold mb-4">Our Vision</h3>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
                         Sandbox.Ventures moves away from pursuing unicorns at all costs. Instead, we build a portfolio of profitable, sustainable SaaS businesses addressing genuine market needs.
                     </p>
-                    <p class="text-gray-700 mt-4">
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
                         We create valuable technology through lean execution and sustainable business models. Our focus on early profitability builds resilient businesses that deliver long-term value. Our "100 horses instead of unicorns" philosophy prioritizes multiple practical successes over high-risk moonshots.
                     </p>
                 </div>
@@ -355,42 +521,124 @@
     </section>
 
     <!-- Footer -->
-    <footer id="contact" class="bg-gray-100 text-gray-600 py-10">
+    <footer id="contact" class="bg-slate-900 dark:bg-slate-950 text-white py-16">
         <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-                <div class="text-center md:text-left">
-                    <h3 class="text-lg font-semibold text-gray-800  rounded-full bg-green-100 inline-flex items-center">Sandbox.Ventures <img class="px-2 h-[1em]" src="/favicon.svg"></h3>
-                    <p class="mt-2 text-sm">The SaaS product factory</p>
-                    <div class="mt-4 flex justify-center md:justify-start space-x-4">
-                        <a href="https://www.linkedin.com/company/sandboxventures" class="text-gray-500 hover:text-gray-700 transition-colors">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+                <div>
+                    <a href="/" class="flex items-center gap-3 mb-6">
+                        <img class="h-10" src="/favicon.svg" alt="Logo">
+                        <span class="text-2xl font-bold">Sandbox.Ventures</span>
+                    </a>
+                    <p class="text-gray-400 mb-6">The SaaS Product Factory</p>
+                    <div class="flex gap-4">
+                        <a href="https://www.linkedin.com/company/sandboxventures" class="w-12 h-12 rounded-full bg-slate-800 hover:bg-indigo-500 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:-translate-y-1">
                             <i class="fab fa-linkedin text-xl"></i>
                         </a>
-                        <a href="https://github.com/sandbox-ventures" class="text-gray-500 hover:text-gray-700 transition-colors">
+                        <a href="https://github.com/sandbox-ventures" class="w-12 h-12 rounded-full bg-slate-800 hover:bg-gray-700 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:-translate-y-1">
                             <i class="fab fa-github text-xl"></i>
                         </a>
-                        <a href="mailto:hello@sandbox.ventures" class="text-gray-500 hover:text-gray-700 transition-colors">
+                        <a href="mailto:hello@sandbox.ventures" class="w-12 h-12 rounded-full bg-slate-800 hover:bg-rose-500 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:-translate-y-1">
                             <i class="fas fa-envelope text-xl"></i>
                         </a>
                     </div>
                 </div>
 
                 <div class="text-center hidden md:block">
-                    <img src="/favicon.svg" alt="Sandbox.Ventures Logo" class="h-16 mx-auto opacity-70">
+                    <img src="/favicon.svg" alt="Logo" class="h-24 mx-auto opacity-20 animate-float">
                 </div>
 
-                <div class="text-center md:text-right">
-                    <div class="text-gray-600">
+                <div class="md:text-right">
+                    <h4 class="text-lg font-semibold mb-4">Get in Touch</h4>
+                    <div class="text-gray-400 space-y-2">
                         <p>Sandbox.Ventures</p>
-                        <p><a href="https://maps.app.goo.gl/i54ExC1dJKBoJFhw5">P. O. Pedersens Vej 2</a></p>
+                        <p><a href="https://maps.app.goo.gl/i54ExC1dJKBoJFhw5" class="hover:text-white transition-colors">P. O. Pedersens Vej 2</a></p>
                         <p>8200 Aarhus N, Denmark</p>
-                        <p class="font-medium mt-2"><a href="mailto:hello@sandbox.ventures" class="text-blue-500 hover:underline">hello@sandbox.ventures</a></p>
+                        <p class="mt-4">
+                            <a href="mailto:hello@sandbox.ventures" class="text-indigo-400 hover:text-indigo-300 font-medium transition-colors">hello@sandbox.ventures</a>
+                        </p>
                     </div>
                 </div>
             </div>
-            <div class="border-t border-gray-200 mt-6 pt-6 text-center text-sm">
+
+            <div class="border-t border-slate-800 mt-12 pt-8 text-center text-gray-500 text-sm">
                 <p>&copy; <script>document.write(new Date().getFullYear())</script> Sandbox.Ventures. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const html = document.documentElement;
+
+        // Check for saved preference or system preference
+        if (localStorage.getItem('darkMode') === 'true' ||
+            (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('darkMode', html.classList.contains('dark'));
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.animate-on-scroll, .animate-left, .animate-right, .animate-scale, .card-reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add staggered animation to children in stagger containers
+        document.querySelectorAll('.stagger-children').forEach(container => {
+            const children = container.children;
+            Array.from(children).forEach((child, index) => {
+                child.style.transitionDelay = `${index * 100}ms`;
+            });
+        });
+
+        // Header scroll effect
+        const header = document.querySelector('header');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 100) {
+                header.classList.add('shadow-lg');
+            } else {
+                header.classList.remove('shadow-lg');
+            }
+
+            lastScroll = currentScroll;
+        });
+    </script>
 </body>
 </html>
