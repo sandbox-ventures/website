@@ -8,581 +8,350 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <meta property="og:title" content="Sandbox.Ventures - The SaaS Product Factory">
-    <meta property="og:description" content="No unicorns, but 100 horses. We build real solutions that solve real problems with practical, efficient, and sustainable SaaS products.">
+    <meta property="og:description" content="We build and run software companies. No unicorn bets — a growing portfolio of profitable products, each solving one problem well.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.sandbox.ventures/">
     <meta property="og:image" content="https://www.sandbox.ventures/favicon.svg">
     <meta property="og:logo" content="https://www.sandbox.ventures/favicon.svg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Sandbox.Ventures - The SaaS Product Factory">
-    <meta name="twitter:description" content="No unicorns, but 100 horses. We build real solutions that solve real problems with practical, efficient, and sustainable SaaS products.">
+    <meta name="twitter:description" content="We build and run software companies. No unicorn bets — a growing portfolio of profitable products, each solving one problem well.">
     <meta name="twitter:image" content="https://www.sandbox.ventures/favicon.svg">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-104SFGLQ6B"></script>
     <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-104SFGLQ6B');</script>
+    <!-- Prevent dark mode flash -->
+    <script>
+        if (localStorage.getItem('darkMode') === 'true' ||
+            (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
     <script>
         tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                        heading: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
+                        body: ['"DM Sans"', 'system-ui', 'sans-serif'],
                     },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'fade-in': 'fadeIn 0.6s ease-out forwards',
-                        'slide-up': 'slideUp 0.6s ease-out forwards',
-                        'slide-down': 'slideDown 0.6s ease-out forwards',
-                        'slide-left': 'slideLeft 0.6s ease-out forwards',
-                        'slide-right': 'slideRight 0.6s ease-out forwards',
-                        'scale-in': 'scaleIn 0.5s ease-out forwards',
-                        'rotate-in': 'rotateIn 0.6s ease-out forwards',
-                        'bounce-in': 'bounceIn 0.8s ease-out forwards',
-                        'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
-                        'shimmer': 'shimmer 2s linear infinite',
-                        'wave': 'wave 1.5s ease-in-out infinite',
-                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        },
+                        surface: {
+                            50: '#fafaf9',
+                            100: '#f5f5f4',
+                            200: '#e7e5e4',
+                            300: '#d6d3d1',
+                            400: '#a8a29e',
+                            500: '#78716c',
+                            600: '#57534e',
+                            700: '#44403c',
+                            800: '#292524',
+                            900: '#1c1917',
+                            950: '#0f0e0d',
+                        }
+                    }
                 }
             }
         }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <style>
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes slideLeft {
-            from { opacity: 0; transform: translateX(50px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes slideRight {
-            from { opacity: 0; transform: translateX(-50px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes scaleIn {
-            from { opacity: 0; transform: scale(0.8); }
-            to { opacity: 1; transform: scale(1); }
-        }
-        @keyframes rotateIn {
-            from { opacity: 0; transform: rotate(-10deg) scale(0.9); }
-            to { opacity: 1; transform: rotate(0) scale(1); }
-        }
-        @keyframes bounceIn {
-            0% { opacity: 0; transform: scale(0.3); }
-            50% { transform: scale(1.05); }
-            70% { transform: scale(0.9); }
-            100% { opacity: 1; transform: scale(1); }
-        }
-        @keyframes pulseGlow {
-            0%, 100% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.3); }
-            50% { box-shadow: 0 0 40px rgba(99, 102, 241, 0.6); }
-        }
-        @keyframes shimmer {
-            0% { background-position: -200% center; }
-            100% { background-position: 200% center; }
-        }
-        @keyframes wave {
-            0%, 100% { transform: rotate(0deg); }
-            25% { transform: rotate(20deg); }
-            75% { transform: rotate(-15deg); }
-        }
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-        @keyframes blink {
-            50% { border-color: transparent; }
-        }
-        .gradient-text {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-        .dark .glass-card {
-            background: rgba(30, 41, 59, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .hero-gradient {
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
-        }
-        .dark .hero-gradient {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-        }
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-        .card-hover:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-        .dark .card-hover:hover {
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-        .nav-blur {
-            backdrop-filter: blur(12px);
-            background: rgba(255, 255, 255, 0.85);
-        }
-        .dark .nav-blur {
-            background: rgba(15, 23, 42, 0.85);
-        }
-        .animate-on-scroll {
+        html { scroll-behavior: smooth; }
+
+        .reveal {
             opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease-out;
+            transform: translateY(16px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
         }
-        .animate-on-scroll.visible {
+        .reveal.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        /* Directional scroll animations */
-        .animate-left {
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .animate-left.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        .animate-right {
-            opacity: 0;
-            transform: translateX(50px);
-            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .animate-right.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        .animate-scale {
-            opacity: 0;
-            transform: scale(0.8);
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .animate-scale.visible {
-            opacity: 1;
-            transform: scale(1);
-        }
-        /* Stagger delays for children */
-        .stagger-children > *:nth-child(1) { transition-delay: 0ms; }
-        .stagger-children > *:nth-child(2) { transition-delay: 100ms; }
-        .stagger-children > *:nth-child(3) { transition-delay: 200ms; }
-        .stagger-children > *:nth-child(4) { transition-delay: 300ms; }
-        .stagger-children > *:nth-child(5) { transition-delay: 400ms; }
-        .stagger-children > *:nth-child(6) { transition-delay: 500ms; }
-        /* Icon hover animations */
-        .icon-bounce:hover i {
-            animation: bounceIn 0.6s ease-out;
-        }
-        .icon-spin:hover i {
-            animation: spin 0.6s ease-out;
-        }
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        /* Button shimmer effect */
-        .btn-shimmer {
-            position: relative;
-            overflow: hidden;
-        }
-        .btn-shimmer::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.5s;
-        }
-        .btn-shimmer:hover::after {
-            left: 100%;
-        }
-        /* Gradient text animation */
-        .gradient-animate {
-            background-size: 200% auto;
-            animation: shimmer 3s linear infinite;
-        }
-        /* Card reveal animation */
-        .card-reveal {
-            opacity: 0;
-            transform: translateY(40px) rotateX(10deg);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-            transform-origin: bottom center;
-        }
-        .card-reveal.visible {
-            opacity: 1;
-            transform: translateY(0) rotateX(0);
-        }
-        /* Parallax subtle effect */
-        .parallax-slow {
-            transition: transform 0.1s ease-out;
-        }
-        /* Counter animation placeholder */
-        .count-up {
-            display: inline-block;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
+
+        .stagger > .reveal:nth-child(1) { transition-delay: 0ms; }
+        .stagger > .reveal:nth-child(2) { transition-delay: 80ms; }
+        .stagger > .reveal:nth-child(3) { transition-delay: 160ms; }
+        .stagger > .reveal:nth-child(4) { transition-delay: 240ms; }
+        .stagger > .reveal:nth-child(5) { transition-delay: 320ms; }
+        .stagger > .reveal:nth-child(6) { transition-delay: 400ms; }
     </style>
 </head>
-<body class="font-sans antialiased bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+<body class="font-body antialiased bg-white dark:bg-surface-900 text-surface-800 dark:text-surface-200 transition-colors duration-200">
 
     <!-- Header -->
-    <header class="fixed z-50 w-full nav-blur shadow-sm transition-all duration-300">
-        <div class="container mx-auto px-6 py-4">
+    <header class="fixed z-50 w-full bg-white/90 dark:bg-surface-900/90 backdrop-blur-sm border-b border-surface-200 dark:border-surface-700 transition-shadow duration-200">
+        <div class="max-w-6xl mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
-                <a href="/" class="flex items-center gap-2 group">
-                    <img class="h-8 transition-transform group-hover:scale-110" src="/favicon.svg" alt="Logo">
-                    <span class="text-xl font-bold text-gray-900 dark:text-white">Sandbox.Ventures</span>
+                <a href="/" class="flex items-center gap-2.5">
+                    <img class="h-8" src="/favicon.svg" alt="Sandbox.Ventures logo">
+                    <span class="font-heading text-lg font-semibold text-surface-900 dark:text-white">Sandbox.Ventures</span>
                 </a>
 
-                <div class="flex items-center gap-4">
+                <div class="flex items-center gap-3">
                     <!-- Dark Mode Toggle -->
-                    <button id="darkModeToggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors">
-                        <i class="fas fa-moon text-gray-600 dark:hidden"></i>
-                        <i class="fas fa-sun text-yellow-400 hidden dark:block"></i>
+                    <button id="darkModeToggle" class="p-2 rounded-lg text-surface-500 dark:text-surface-400 hover:text-surface-800 dark:hover:text-surface-200 hover:bg-surface-100 dark:hover:bg-surface-800 transition-colors" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon text-sm dark:hidden"></i>
+                        <i class="fas fa-sun text-sm hidden dark:block"></i>
                     </button>
 
                     <!-- Mobile Menu Button -->
-                    <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors">
-                        <i class="fas fa-bars text-xl text-gray-600 dark:text-gray-300"></i>
+                    <button id="mobileMenuBtn" class="md:hidden p-2 -mr-2 text-surface-500 dark:text-surface-400 hover:text-surface-800 dark:hover:text-surface-200 transition-colors">
+                        <i class="fas fa-bars text-lg"></i>
                     </button>
 
                     <!-- Desktop Navigation -->
                     <nav class="hidden md:block">
                         <ul class="flex items-center gap-8">
-                            <li><a href="#philosophy" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-indigo-500 hover:after:w-full after:transition-all">Philosophy</a></li>
-                            <li><a href="#products" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-indigo-500 hover:after:w-full after:transition-all">Products</a></li>
-                            <li><a href="#contact" class="px-5 py-2.5 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-medium rounded-full hover:shadow-lg hover:shadow-indigo-500/30 transition-all">Contact</a></li>
+                            <li><a href="#philosophy" class="text-surface-500 dark:text-surface-400 hover:text-surface-900 dark:hover:text-white text-sm font-medium transition-colors">Philosophy</a></li>
+                            <li><a href="#products" class="text-surface-500 dark:text-surface-400 hover:text-surface-900 dark:hover:text-white text-sm font-medium transition-colors">Products</a></li>
+                            <li><a href="#about" class="text-surface-500 dark:text-surface-400 hover:text-surface-900 dark:hover:text-white text-sm font-medium transition-colors">About</a></li>
+                            <li><a href="mailto:hello@sandbox.ventures" class="text-sm font-medium text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 transition-colors">hello@sandbox.ventures</a></li>
                         </ul>
                     </nav>
                 </div>
             </div>
 
             <!-- Mobile Navigation -->
-            <nav id="mobileMenu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-200 dark:border-slate-700 pt-4">
-                <ul class="flex flex-col gap-4">
-                    <li><a href="#philosophy" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium transition-colors block py-2">Philosophy</a></li>
-                    <li><a href="#products" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium transition-colors block py-2">Products</a></li>
-                    <li><a href="#contact" class="px-5 py-2.5 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-medium rounded-full text-center block">Contact</a></li>
+            <nav id="mobileMenu" class="hidden md:hidden mt-4 pb-2 border-t border-surface-200 dark:border-surface-700 pt-4">
+                <ul class="flex flex-col gap-3">
+                    <li><a href="#philosophy" class="text-surface-600 dark:text-surface-400 hover:text-surface-900 dark:hover:text-white font-medium transition-colors block py-1">Philosophy</a></li>
+                    <li><a href="#products" class="text-surface-600 dark:text-surface-400 hover:text-surface-900 dark:hover:text-white font-medium transition-colors block py-1">Products</a></li>
+                    <li><a href="#about" class="text-surface-600 dark:text-surface-400 hover:text-surface-900 dark:hover:text-white font-medium transition-colors block py-1">About</a></li>
+                    <li><a href="mailto:hello@sandbox.ventures" class="text-brand-600 dark:text-brand-400 font-medium block py-1">hello@sandbox.ventures</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="min-h-screen hero-gradient flex items-center pt-20 relative overflow-hidden">
-        <!-- Animated Background Shapes -->
-        <div class="absolute inset-0 overflow-hidden pointer-events-none">
-            <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-indigo-300/20 dark:bg-indigo-500/10 rounded-full blur-3xl animate-float"></div>
-            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-300/20 dark:bg-purple-500/10 rounded-full blur-3xl animate-float" style="animation-delay: -3s;"></div>
-            <div class="absolute top-1/2 right-1/3 w-48 h-48 bg-pink-300/20 dark:bg-pink-500/10 rounded-full blur-3xl animate-float" style="animation-delay: -1.5s;"></div>
-        </div>
+    <!-- Hero -->
+    <section class="min-h-[75vh] flex items-center pt-20 bg-surface-50 dark:bg-surface-800">
+        <div class="max-w-6xl mx-auto px-6 py-24 md:py-36">
+            <div class="max-w-3xl">
+                <p class="text-brand-600 dark:text-brand-400 font-heading font-semibold text-base md:text-lg mb-6">100 Horses, Not Unicorns</p>
 
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="max-w-4xl mx-auto text-center">
-                <div class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-100 dark:bg-indigo-900/50 rounded-full text-indigo-700 dark:text-indigo-300 font-medium text-sm mb-8 animate-fade-in opacity-0" style="animation-delay: 0.2s;">
-                    <i class="fas fa-horse animate-wave"></i>
-                    <span>100 Horses, Not Unicorns</span>
-                </div>
-
-                <h1 class="text-5xl md:text-7xl font-extrabold mb-6 animate-slide-up opacity-0" style="animation-delay: 0.4s;">
-                    The SaaS
-                    <span class="gradient-text gradient-animate"> Product Factory</span>
+                <h1 class="font-heading text-5xl sm:text-6xl md:text-7xl font-bold text-surface-900 dark:text-white mb-8 leading-[1.05] border-l-[5px] border-brand-500 pl-6 md:pl-8">
+                    The SaaS<br>Product Factory
                 </h1>
 
-                <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-10 max-w-2xl mx-auto animate-slide-up opacity-0" style="animation-delay: 0.6s;">
-                    We build real solutions that solve real problems. Practical, efficient, and sustainable SaaS products.
+                <p class="text-lg md:text-xl text-surface-500 dark:text-surface-400 mb-12 max-w-xl leading-relaxed">
+                    We build and run software companies. No unicorn bets — a growing portfolio of profitable products, each solving one problem well.
                 </p>
 
-                <div class="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up opacity-0" style="animation-delay: 0.8s;">
-                    <a href="#products" class="btn-shimmer px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-semibold rounded-full hover:shadow-xl hover:shadow-indigo-500/30 transition-all hover:-translate-y-1 hover:scale-105">
-                        Explore Products
-                        <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <a href="#products" class="inline-flex items-center justify-center px-6 py-3 bg-brand-600 text-white font-medium rounded-lg hover:bg-brand-700 transition-colors text-sm">
+                        See our products
+                        <i class="fas fa-arrow-down ml-2 text-xs"></i>
                     </a>
-                    <a href="#philosophy" class="px-8 py-4 bg-white dark:bg-slate-800 text-gray-900 dark:text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 hover:scale-105 border border-gray-200 dark:border-slate-700">
-                        Our Philosophy
+                    <a href="mailto:hello@sandbox.ventures" class="inline-flex items-center justify-center px-6 py-3 border border-surface-300 dark:border-surface-600 text-surface-700 dark:text-surface-300 font-medium rounded-lg hover:border-surface-400 dark:hover:border-surface-500 hover:bg-surface-50 dark:hover:bg-surface-700 transition-colors text-sm">
+                        Get in touch
                     </a>
                 </div>
             </div>
         </div>
-
-        <!-- Scroll Indicator -->
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-            <a href="#philosophy" class="text-gray-400 dark:text-gray-600">
-                <i class="fas fa-chevron-down text-2xl"></i>
-            </a>
-        </div>
     </section>
 
-    <!-- Philosophy Section -->
-    <section id="philosophy" class="py-24 bg-white dark:bg-slate-900">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16 animate-on-scroll">
-                <span class="text-indigo-500 font-semibold text-sm uppercase tracking-wider">Our Approach</span>
-                <h2 class="text-4xl md:text-5xl font-bold mt-3 mb-4">How We Build</h2>
-                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">
-                    Our philosophy guides every decision we make, from product ideation to execution.
+    <!-- Philosophy -->
+    <section id="philosophy" class="py-16 md:py-24 bg-white dark:bg-surface-900">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="max-w-2xl mb-14 reveal">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-surface-900 dark:text-white mb-4">How we build</h2>
+                <p class="text-surface-500 dark:text-surface-400 text-lg leading-relaxed">
+                    Six principles guide every product we build and every team we assemble.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto stagger-children">
-                <div class="glass-card p-8 rounded-2xl card-hover card-reveal icon-bounce">
-                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center mb-6 shadow-lg shadow-blue-500/30 transition-transform hover:scale-110 hover:rotate-3">
-                        <i class="fas fa-puzzle-piece text-white text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Practicality First</h3>
-                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">We focus on solutions that address genuine market needs, not chasing trends or building for hypothetical futures.</p>
+            <!-- Featured value — the core philosophy -->
+            <div class="border-l-[5px] border-brand-500 pl-6 md:pl-8 mb-16 reveal">
+                <h3 class="font-heading text-2xl md:text-3xl font-semibold text-surface-900 dark:text-white mb-3">Portfolio approach</h3>
+                <p class="text-surface-500 dark:text-surface-400 text-lg leading-relaxed max-w-2xl">100 horses instead of one unicorn. We build a portfolio of practical SaaS products — multiple sustainable successes rather than a single high-risk moonshot.</p>
+            </div>
+
+            <!-- Supporting values -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-8 stagger">
+                <div class="reveal">
+                    <h3 class="font-heading font-semibold text-surface-900 dark:text-surface-100 mb-2">Practicality first</h3>
+                    <p class="text-surface-500 dark:text-surface-400 leading-relaxed">Solutions for genuine market needs. No trend-chasing, no building for hypothetical futures.</p>
                 </div>
 
-                <div class="glass-card p-8 rounded-2xl card-hover card-reveal icon-bounce">
-                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center mb-6 shadow-lg shadow-green-500/30 transition-transform hover:scale-110 hover:rotate-3">
-                        <i class="fas fa-bolt text-white text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Maximum Efficiency</h3>
-                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Making the most of limited resources by maximizing development productivity and minimizing waste.</p>
+                <div class="reveal">
+                    <h3 class="font-heading font-semibold text-surface-900 dark:text-surface-100 mb-2">Lean execution</h3>
+                    <p class="text-surface-500 dark:text-surface-400 leading-relaxed">Maximum output from minimal resources. Every hour and every dollar is spent with intention.</p>
                 </div>
 
-                <div class="glass-card p-8 rounded-2xl card-hover card-reveal icon-bounce">
-                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500 to-violet-600 flex items-center justify-center mb-6 shadow-lg shadow-purple-500/30 transition-transform hover:scale-110 hover:rotate-3">
-                        <i class="fas fa-rocket text-white text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Speed to Market</h3>
-                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Getting to market quickly to validate ideas and deliver value to customers without unnecessary delays.</p>
+                <div class="reveal">
+                    <h3 class="font-heading font-semibold text-surface-900 dark:text-surface-100 mb-2">Speed to market</h3>
+                    <p class="text-surface-500 dark:text-surface-400 leading-relaxed">Ship fast, validate quickly, iterate based on real usage. Delay is the enemy of learning.</p>
                 </div>
 
-                <div class="glass-card p-8 rounded-2xl card-hover card-reveal icon-bounce">
-                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-rose-500 to-pink-600 flex items-center justify-center mb-6 shadow-lg shadow-rose-500/30 transition-transform hover:scale-110 hover:rotate-3">
-                        <i class="fas fa-seedling text-white text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Sustainability</h3>
-                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Building businesses with sound economics from day one, focusing on profitability over vanity metrics.</p>
+                <div class="reveal">
+                    <h3 class="font-heading font-semibold text-surface-900 dark:text-surface-100 mb-2">Profitable from day one</h3>
+                    <p class="text-surface-500 dark:text-surface-400 leading-relaxed">Sound economics from the start. Revenue, not fundraising rounds, is the measure of progress.</p>
                 </div>
 
-                <div class="glass-card p-8 rounded-2xl card-hover card-reveal icon-bounce">
-                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center mb-6 shadow-lg shadow-amber-500/30 transition-transform hover:scale-110 hover:rotate-3">
-                        <i class="fas fa-horse text-white text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">100 Horses Philosophy</h3>
-                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Building a portfolio of solid, practical SaaS products rather than chasing a single unicorn dream.</p>
-                </div>
-
-                <div class="glass-card p-8 rounded-2xl card-hover card-reveal icon-bounce">
-                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center mb-6 shadow-lg shadow-indigo-500/30 transition-transform hover:scale-110 hover:rotate-3">
-                        <i class="fas fa-users text-white text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Small, Elite Teams</h3>
-                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Small teams of highly skilled individuals who can move quickly and make decisive, impactful decisions.</p>
+                <div class="reveal">
+                    <h3 class="font-heading font-semibold text-surface-900 dark:text-surface-100 mb-2">Small teams</h3>
+                    <p class="text-surface-500 dark:text-surface-400 leading-relaxed">Skilled individuals who move fast and make decisions. No layers, no committees, no waiting.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Products Section -->
-    <section id="products" class="py-24 bg-gray-50 dark:bg-slate-800/50">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16 animate-on-scroll">
-                <span class="text-indigo-500 font-semibold text-sm uppercase tracking-wider">Our Portfolio</span>
-                <h2 class="text-4xl md:text-5xl font-bold mt-3 mb-4">Products We're Building</h2>
-                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">
-                    A growing stable of practical SaaS solutions solving real business problems.
-                </p>
+    <!-- Products -->
+    <section id="products" class="py-24 md:py-32 bg-surface-50 dark:bg-surface-800">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="max-w-2xl mb-14 reveal">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-surface-900 dark:text-white">Products</h2>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto stagger-children">
-                <!-- Nemboks -->
-                <div class="bg-white dark:bg-slate-800 rounded-3xl overflow-hidden card-hover shadow-lg card-reveal group">
-                    <div class="h-48 flex items-center justify-center relative overflow-hidden" style="background: linear-gradient(135deg, #FF6A6D 0%, #ff8587 50%, #FF6A6D 100%);">
-                        <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500"></div>
-                        <img src="/img/nemboks-logo.svg" alt="Nemboks Logo" class="h-12 relative z-10 brightness-0 invert transition-transform duration-500 group-hover:scale-110">
+            <div class="grid md:grid-cols-2 gap-8 stagger">
+                <a href="https://www.nemboks.dk" class="group block bg-white dark:bg-surface-900 border border-surface-200 dark:border-surface-700 rounded-xl overflow-hidden hover:border-surface-300 dark:hover:border-surface-600 transition-colors reveal">
+                    <div class="h-44 flex items-center justify-center relative" style="background-color: #FF6A6D;">
+                        <span class="absolute top-3 left-5 font-heading text-white/20 text-7xl font-bold leading-none">01</span>
+                        <img src="/img/nemboks-logo.svg" alt="Nemboks" class="h-10 brightness-0 invert">
                     </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold mb-3 transition-colors group-hover:text-indigo-500">Nemboks.dk</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                            Enables Danish companies to receive and manage their official Digital Post communications seamlessly forwarded to their regular email inbox.
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="font-heading font-semibold text-surface-900 dark:text-white text-lg">Nemboks.dk</h3>
+                            <i class="fas fa-arrow-right text-surface-300 dark:text-surface-600 group-hover:text-brand-500 group-hover:translate-x-1 transition-all text-sm"></i>
+                        </div>
+                        <p class="text-surface-500 dark:text-surface-400 text-sm leading-relaxed">
+                            Forwards Danish Digital Post to your company's regular email inbox. No more logging into separate government portals.
                         </p>
-                        <a href="https://www.nemboks.dk" class="inline-flex items-center gap-2 text-indigo-500 hover:text-indigo-600 font-semibold group/link">
-                            Visit Website
-                            <i class="fas fa-arrow-right transition-transform group-hover/link:translate-x-2"></i>
-                        </a>
                     </div>
-                </div>
+                </a>
 
-                <!-- Finscale -->
-                <div class="bg-white dark:bg-slate-800 rounded-3xl overflow-hidden card-hover shadow-lg card-reveal group">
-                    <div class="h-48 flex items-center justify-center relative overflow-hidden" style="background: linear-gradient(135deg, #1E40AF 0%, #3B5DC9 50%, #1E40AF 100%);">
-                        <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500"></div>
-                        <img src="https://www.finscale.io/favicon.svg" alt="Finscale Logo" class="h-12 relative z-10 brightness-0 invert transition-transform duration-500 group-hover:scale-110">
+                <a href="https://www.finscale.io/" class="group block bg-white dark:bg-surface-900 border border-surface-200 dark:border-surface-700 rounded-xl overflow-hidden hover:border-surface-300 dark:hover:border-surface-600 transition-colors reveal">
+                    <div class="h-44 flex items-center justify-center relative" style="background-color: #1E40AF;">
+                        <span class="absolute top-3 left-5 font-heading text-white/20 text-7xl font-bold leading-none">02</span>
+                        <img src="https://www.finscale.io/favicon.svg" alt="Finscale" class="h-10 brightness-0 invert">
                     </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold mb-3 transition-colors group-hover:text-indigo-500">Finscale</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                            AI-driven merchant management platform for fintechs. Streamline customer onboarding, compliance workflows, and risk management.
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="font-heading font-semibold text-surface-900 dark:text-white text-lg">Finscale</h3>
+                            <i class="fas fa-arrow-right text-surface-300 dark:text-surface-600 group-hover:text-brand-500 group-hover:translate-x-1 transition-all text-sm"></i>
+                        </div>
+                        <p class="text-surface-500 dark:text-surface-400 text-sm leading-relaxed">
+                            Merchant onboarding and compliance for fintechs. Handles KYC, risk scoring, and ongoing monitoring in one platform.
                         </p>
-                        <a href="https://www.finscale.io/" class="inline-flex items-center gap-2 text-indigo-500 hover:text-indigo-600 font-semibold group/link">
-                            Visit Website
-                            <i class="fas fa-arrow-right transition-transform group-hover/link:translate-x-2"></i>
-                        </a>
                     </div>
-                </div>
+                </a>
+            </div>
 
-                <!-- Coming Soon -->
-                <div class="bg-white dark:bg-slate-800 rounded-3xl overflow-hidden card-hover shadow-lg card-reveal group">
-                    <div class="h-48 bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center relative overflow-hidden">
-                        <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500"></div>
-                        <i class="fas fa-rocket text-white text-5xl relative z-10 transition-transform duration-500 group-hover:scale-125 group-hover:-rotate-12"></i>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold mb-3 transition-colors group-hover:text-purple-500">More Coming Soon</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                            Additional products are in active development. We're validating new ideas and building solutions for emerging market needs.
-                        </p>
-                        <span class="inline-flex items-center gap-2 text-gray-400 font-semibold">
-                            <i class="fas fa-clock animate-pulse"></i>
-                            In Development
-                        </span>
-                    </div>
+            <p class="text-surface-400 text-sm mt-10 reveal">More products in development.</p>
+        </div>
+    </section>
+
+    <!-- Statement Band -->
+    <section class="bg-brand-600 py-16 md:py-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <p class="font-heading text-2xl md:text-4xl font-bold text-white leading-snug max-w-3xl">
+                We don't raise to grow.<br class="hidden md:block"> We grow to last.
+            </p>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-16 md:py-24 bg-white dark:bg-surface-900">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="max-w-2xl reveal">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-surface-900 dark:text-white mb-6">Who we are</h2>
+                <div class="space-y-4 text-surface-500 dark:text-surface-400 leading-relaxed">
+                    <p>
+                        Sandbox.Ventures was founded by experienced entrepreneurs from Clearhaus, a leading European payment company they previously built and scaled.
+                    </p>
+                    <p>
+                        The team has deep experience in payments, software development, and business operations. We've built products, grown teams, and solved real problems for real customers.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Partnership Section -->
-    <section id="partnership" class="py-24 bg-white dark:bg-slate-900">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto text-center animate-on-scroll">
-                <span class="text-indigo-500 font-semibold text-sm uppercase tracking-wider">Partner With Us</span>
-                <h2 class="text-4xl md:text-5xl font-bold mt-3 mb-6">Build With Us</h2>
-                <p class="text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
-                    We partner with ambitious founders to turn validated ideas into category leaders. We spot opportunities, build strategically, and accelerate what works. Combining brand expertise, cutting-edge technology, and smart capital, we create enduring companies built for sustainable growth.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-24 bg-gray-50 dark:bg-slate-800/50">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16 animate-on-scroll">
-                <span class="text-indigo-500 font-semibold text-sm uppercase tracking-wider">About Us</span>
-                <h2 class="text-4xl md:text-5xl font-bold mt-3 mb-4">Who We Are</h2>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                <div class="bg-white dark:bg-slate-800 p-10 rounded-3xl shadow-lg card-hover animate-left icon-bounce">
-                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center mb-6 shadow-lg shadow-blue-500/30 transition-transform duration-300 hover:scale-110 hover:rotate-3">
-                        <i class="fas fa-users text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Our Team</h3>
-                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
-                        Sandbox.Ventures was founded by a team of experienced entrepreneurs with backgrounds in fintech and technology. The founding team members were all part of Clearhaus, a leading European payment company that several of them previously founded and successfully scaled.
+    <!-- Build With Us -->
+    <section class="py-16 md:py-24 bg-surface-50 dark:bg-surface-800">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="border-l-[5px] border-brand-500 pl-6 md:pl-8 reveal">
+                <h3 class="font-heading text-2xl md:text-3xl font-semibold text-surface-900 dark:text-white mb-4">Build with us</h3>
+                <div class="space-y-4 text-surface-500 dark:text-surface-400 leading-relaxed max-w-2xl">
+                    <p>
+                        Have a validated SaaS idea and need a team to build it? We partner with founders who have domain expertise and a clear market. We bring engineering, capital, and operational experience.
                     </p>
-                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-                        Our team has built products, grown tech teams, and solved real problems for real customers. With expertise in payments, coding, and business, we identify opportunities and execute efficiently in today's market.
+                    <p>
+                        We optimize for early revenue, not fundraising rounds. If that sounds like your kind of partnership, reach out.
                     </p>
                 </div>
-
-                <div class="bg-white dark:bg-slate-800 p-10 rounded-3xl shadow-lg card-hover animate-right icon-bounce">
-                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center mb-6 shadow-lg shadow-purple-500/30 transition-transform duration-300 hover:scale-110 hover:rotate-3">
-                        <i class="fas fa-horse text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Our Vision</h3>
-                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
-                        Sandbox.Ventures moves away from pursuing unicorns at all costs. Instead, we build a portfolio of profitable, sustainable SaaS businesses addressing genuine market needs.
-                    </p>
-                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-                        We create valuable technology through lean execution and sustainable business models. Our focus on early profitability builds resilient businesses that deliver long-term value. Our "100 horses instead of unicorns" philosophy prioritizes multiple practical successes over high-risk moonshots.
-                    </p>
-                </div>
+                <a href="mailto:hello@sandbox.ventures" class="inline-flex items-center gap-2 text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 font-medium mt-6 text-sm transition-colors">
+                    hello@sandbox.ventures
+                    <i class="fas fa-arrow-right text-xs"></i>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact" class="bg-slate-900 dark:bg-slate-950 text-white py-16">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+    <footer class="bg-surface-900 dark:bg-surface-950 text-white py-14">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between gap-10">
                 <div>
-                    <a href="/" class="flex items-center gap-3 mb-6">
-                        <img class="h-10" src="/favicon.svg" alt="Logo">
-                        <span class="text-2xl font-bold">Sandbox.Ventures</span>
+                    <a href="/" class="flex items-center gap-2.5 mb-4">
+                        <img class="h-8" src="/favicon.svg" alt="Sandbox.Ventures logo">
+                        <span class="font-heading font-semibold">Sandbox.Ventures</span>
                     </a>
-                    <p class="text-gray-400 mb-6">The SaaS Product Factory</p>
-                    <div class="flex gap-4">
-                        <a href="https://www.linkedin.com/company/sandboxventures" class="w-12 h-12 rounded-full bg-slate-800 hover:bg-indigo-500 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:-translate-y-1">
-                            <i class="fab fa-linkedin text-xl"></i>
+                    <p class="text-surface-400 text-sm mb-6">The SaaS Product Factory</p>
+                    <div class="flex gap-3">
+                        <a href="https://www.linkedin.com/company/sandboxventures" class="w-9 h-9 rounded-lg bg-surface-800 hover:bg-surface-700 flex items-center justify-center transition-colors">
+                            <i class="fab fa-linkedin text-sm"></i>
                         </a>
-                        <a href="https://github.com/sandbox-ventures" class="w-12 h-12 rounded-full bg-slate-800 hover:bg-gray-700 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:-translate-y-1">
-                            <i class="fab fa-github text-xl"></i>
+                        <a href="https://github.com/sandbox-ventures" class="w-9 h-9 rounded-lg bg-surface-800 hover:bg-surface-700 flex items-center justify-center transition-colors">
+                            <i class="fab fa-github text-sm"></i>
                         </a>
-                        <a href="mailto:hello@sandbox.ventures" class="w-12 h-12 rounded-full bg-slate-800 hover:bg-rose-500 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:-translate-y-1">
-                            <i class="fas fa-envelope text-xl"></i>
+                        <a href="mailto:hello@sandbox.ventures" class="w-9 h-9 rounded-lg bg-surface-800 hover:bg-surface-700 flex items-center justify-center transition-colors">
+                            <i class="fas fa-envelope text-sm"></i>
                         </a>
                     </div>
-                </div>
-
-                <div class="text-center hidden md:block">
-                    <img src="/favicon.svg" alt="Logo" class="h-24 mx-auto opacity-20 animate-float">
                 </div>
 
                 <div class="md:text-right">
-                    <h4 class="text-lg font-semibold mb-4">Get in Touch</h4>
-                    <div class="text-gray-400 space-y-2">
-                        <p>Sandbox.Ventures</p>
-                        <p><a href="https://maps.app.goo.gl/i54ExC1dJKBoJFhw5" class="hover:text-white transition-colors">P. O. Pedersens Vej 2</a></p>
-                        <p>8200 Aarhus N, Denmark</p>
-                        <p class="mt-4">
-                            <a href="mailto:hello@sandbox.ventures" class="text-indigo-400 hover:text-indigo-300 font-medium transition-colors">hello@sandbox.ventures</a>
-                        </p>
-                    </div>
+                    <p class="text-surface-400 text-sm space-y-1">
+                        <span class="block"><a href="https://maps.app.goo.gl/i54ExC1dJKBoJFhw5" class="hover:text-white transition-colors">P. O. Pedersens Vej 2</a></span>
+                        <span class="block">8200 Aarhus N, Denmark</span>
+                        <span class="block mt-3"><a href="mailto:hello@sandbox.ventures" class="text-brand-400 hover:text-brand-300 transition-colors">hello@sandbox.ventures</a></span>
+                    </p>
                 </div>
             </div>
 
-            <div class="border-t border-slate-800 mt-12 pt-8 text-center text-gray-500 text-sm">
-                <p>&copy; <script>document.write(new Date().getFullYear())</script> Sandbox.Ventures. All rights reserved.</p>
+            <div class="border-t border-surface-800 mt-10 pt-6 text-surface-500 text-xs">
+                <p>&copy; <span id="currentYear"></span> Sandbox.Ventures</p>
             </div>
         </div>
     </footer>
 
     <script>
+        // Current year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
         // Dark Mode Toggle
         const darkModeToggle = document.getElementById('darkModeToggle');
-        const html = document.documentElement;
-
-        // Check for saved preference or system preference
-        if (localStorage.getItem('darkMode') === 'true' ||
-            (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            html.classList.add('dark');
-        }
-
         darkModeToggle.addEventListener('click', () => {
-            html.classList.toggle('dark');
-            localStorage.setItem('darkMode', html.classList.contains('dark'));
+            document.documentElement.classList.toggle('dark');
+            localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
         });
 
-        // Mobile Menu Toggle
+        // Mobile Menu
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
 
@@ -590,54 +359,23 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Close mobile menu when clicking a link
         mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
         });
 
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
+        // Scroll reveal
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('visible');
             });
-        }, observerOptions);
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-        // Observe all animated elements
-        document.querySelectorAll('.animate-on-scroll, .animate-left, .animate-right, .animate-scale, .card-reveal').forEach(el => {
-            observer.observe(el);
-        });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // Add staggered animation to children in stagger containers
-        document.querySelectorAll('.stagger-children').forEach(container => {
-            const children = container.children;
-            Array.from(children).forEach((child, index) => {
-                child.style.transitionDelay = `${index * 100}ms`;
-            });
-        });
-
-        // Header scroll effect
+        // Header shadow on scroll
         const header = document.querySelector('header');
-        let lastScroll = 0;
-
         window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-
-            if (currentScroll > 100) {
-                header.classList.add('shadow-lg');
-            } else {
-                header.classList.remove('shadow-lg');
-            }
-
-            lastScroll = currentScroll;
+            header.classList.toggle('shadow-sm', window.scrollY > 50);
         });
     </script>
 </body>
