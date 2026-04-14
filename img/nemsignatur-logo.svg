@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 56" fill="none">
+  <!-- Icon -->
+  <rect width="56" height="56" rx="10.5" fill="white" fill-opacity="0.2"/>
+  <g transform="translate(11 17.5) scale(0.274)">
+    <polygon points="0,25 50,25 75,50 50,75 0,75" fill="white"/>
+    <rect x="75" y="0" width="50" height="75" fill="white"/>
+  </g>
+  <!-- Wordmark -->
+  <text x="72" y="38" font-family="system-ui, -apple-system, sans-serif" font-size="28" fill="white" font-weight="700">NemSignatur</text>
+</svg>
