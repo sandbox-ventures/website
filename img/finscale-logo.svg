@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 56" fill="none">
+  <!-- Icon -->
+  <rect width="56" height="56" rx="10.5" fill="white" fill-opacity="0.2"/>
+  <text x="28" y="36" font-family="Arial, sans-serif" font-size="32" fill="white" font-weight="bold" text-anchor="middle">F</text>
+  <!-- Wordmark -->
+  <text x="72" y="38" font-family="system-ui, -apple-system, sans-serif" font-size="28" fill="white" font-weight="700">Finscale</text>
+</svg>
